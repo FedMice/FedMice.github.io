@@ -1,0 +1,71 @@
+<div class="fk-row">
+    <div class="fk-col-14">
+        <div class="fk-column">
+
+            <!--  Toaster -->
+            <bz-card>
+                <bz-card-header>
+                    <span class="title">Toaster</span>
+                </bz-card-header>
+            </bz-card>
+
+            <!-- Usage -->
+            <app-usage class="card-top"></app-usage>
+
+            <!--  Config -->
+            <bz-card class="card-top" id="config">
+                <bz-card-header>
+                    <span class="title"> Config </span>
+                </bz-card-header>
+                <bz-card-content>
+                    <div class="card-badge content-card"> 
+                        <span class="fk-badge">BzToastrService.showToast(message, config)</span> gets two parametrs in input, where config is optional.
+                        <div class="line-spacing"> Config object presents the follow properties:</div>
+                        <ul class="line-spacing">
+                            <li class="ul-li"> Severity</li>
+                            <li class="ul-li"> Position </li>
+                            <li class="ul-li"> Duration</li>
+                            <li class="ul-li"> DestroyByClick</li>
+                            <li class="ul-li"> PreventDuplicates</li>
+                            <li class="ul-li"> Icon</li>
+                        </ul>
+                    </div>
+                   
+                </bz-card-content>
+            </bz-card>
+
+           <!--  Severity -->
+           <app-severity class="card-top"></app-severity>
+
+            <!--  Position -->
+           <app-position class="card-top"></app-position>
+
+           <!-- Duration -->
+            <app-duration class="card-top"></app-duration>
+
+             <!-- Destroy By Click -->
+            <app-destroy-by-click class="card-top"></app-destroy-by-click>
+
+            <!-- Prevent duplicates -->
+            <app-prevents-duplicates class="card-top"></app-prevents-duplicates>
+            
+            <!-- Custom icon -->
+            <app-icon class="card-top"></app-icon>
+
+        </div>
+    </div>
+    <!--  Affix -->
+    <div class="code-card">
+        <bz-affix title="Overview" [toc]="[
+            {fragment: 'usage', title: 'Usage' },
+            {fragment: 'config', title: 'Config' },
+            {fragment: 'severity', title: 'Severity' },
+            {fragment: 'position', title: 'Position' },
+            {fragment: 'duration', title: 'Duration' },
+            {fragment: 'destroyByClick', title: 'Destroy by click' },
+            {fragment: 'preventDuplicates', title: 'Prevent duplicates' },
+            {fragment: 'icon', title: 'Custom icon' },
+        ]">
+        </bz-affix>
+    </div>
+</div>
