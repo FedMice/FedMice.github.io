@@ -1,0 +1,165 @@
+<div class="fk-row">
+    <div class="fk-col-14">
+        <div class="fk-column">
+
+            <!--  What is BlazinG -->
+            <bz-card id="whatBlazing">
+                <bz-card-header>
+                    <span class="title"> What is BlaziNG ? </span>
+                </bz-card-header>
+
+                <bz-card-content>
+                    <span> BlaziNG is a User Interface (UI) component library whose functionality is to facilitate the
+                        construction
+                        of attractive, consistent and functional web pages or web applications
+                    </span>
+                    {{'ciao' | bzTranslate}}
+                </bz-card-content>
+            </bz-card>
+
+            <!-- Features -->
+            <bz-card class="card-top" id="features">
+                <bz-card-header>
+                    <span class="title"> Features </span>
+                </bz-card-header>
+
+                <bz-card-content>
+                    <ul>
+                        <li class="ul-li">30+ high-quality Angular components out of the box.</li>
+                        <li class="ul-li">Written in TypeScript with complete defined types.</li>
+                        <li class="ul-li">Support OnPush mode, high performance.</li>
+                        <li class="ul-li">Powerful theme customization in every detail.</li>
+                    </ul>
+                </bz-card-content>
+            </bz-card>
+
+            <!--Browser Support -->
+            <bz-card class="card-top" id="browserSupport">
+                <bz-card-header>
+                    <span class="title"> Browser support </span>
+                </bz-card-header>
+
+                <bz-card-content>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="fk-center" style="margin-right: 10px;"><img style="margin-right:5px"
+                                            src="https://img.alicdn.com/tfs/TB1G5ewZuL2gK0jSZPhXXahvXXa-48-48.png"
+                                            width="30px" height="30px" alt="Edge">Edge</div>
+                                </th>
+                                <th>
+                                    <div class="fk-center" style="margin-right: 10px;"><img style="margin-right:5px"
+                                            src="https://img.alicdn.com/tfs/TB1Dx73o79l0K4jSZFKXXXFjpXa-48-48.png"
+                                            width="30px" height="30px" alt="Firefox">Firefox</div>
+                                </th>
+                                <th>
+                                    <div class="fk-center" style="margin-right: 10px;"><img style="margin-right:5px"
+                                            src="https://img.alicdn.com/tfs/TB1mY9FZrr1gK0jSZFDXXb9yVXa-48-48.png"
+                                            width="30px" height="30px" alt="Chrome">Chrome</div>
+                                </th>
+                                <th>
+                                    <div class="fk-center" style="margin-right: 10px;"><img style="margin-right:5px"
+                                            src="https://img.alicdn.com/tfs/TB12EmNZET1gK0jSZFrXXcNCXXa-48-48.png"
+                                            width="30px" height="30px" alt="Opera">Opera</div>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </bz-card-content>
+            </bz-card>
+
+            <!-- Angular Support -->
+            <bz-card class="card-top" id="angularSupport">
+                <bz-card-header>
+                    <span class="title"> Angular Support </span>
+                </bz-card-header>
+
+                <bz-card-content>
+                    BlaziNG support Angular ^11.0.0
+                </bz-card-content>
+            </bz-card>
+
+            <!-- Installation -->
+            <bz-card class="card-top" id="installation">
+                <bz-card-header>
+                    <span class="title"> Installation </span>
+                </bz-card-header>
+                <bz-card-content>
+                    <p>To install BlaziNG run the following command : </p>
+                    <code
+                        class="code-card">npm intsall http://nexus.micegroup.it/repository/npm-private/blazing/-/blazing-0.0.61.tgz -- save</code>
+                </bz-card-content>
+            </bz-card>
+
+            <!-- Style -->
+            <bz-card class="card-top" id="style">
+                <bz-card-header>
+                    <span class="title"> Style configuration </span>
+                </bz-card-header>
+                <bz-card-content>
+                    <p>Add in angular.json file</p>
+                    <code><pre class="code-card">{{HomeConstant.STYLES}}</pre></code>
+                </bz-card-content>
+            </bz-card>
+
+            <!-- Assets -->
+            <bz-card class="card-top" id="asset">
+                <bz-card-header>
+                    <span class="title"> Assets configuration</span>
+                </bz-card-header>
+                <bz-card-content>
+                    <p> Add in angular.json file</p>
+                    <code><pre class="code-card">{{HomeConstant.ASSETS}}</pre></code>
+                </bz-card-content>
+            </bz-card>
+
+            <!--  Animation -->
+            <bz-card class="card-top" id="animation">
+                <bz-card-header>
+                    <span class="title"> Animation </span>
+                </bz-card-header>
+                <bz-card-content>
+                    <div class="card-badge" style="margin-bottom:10px">Some components use animations to imporove user expirience so you
+                        have
+                        to import <span class="fk-badge">BroswerAnimationModule</span>
+                        in your app.</div>
+                    <bz-code-box>
+                        <span highlight [bzCodeBox]="HomeConstant.ANIMATION" class="typeScript"></span>
+                    </bz-code-box>
+                </bz-card-content>
+            </bz-card>
+
+            <!-- Theme -->
+            <bz-card class="card-top" id="theme">
+                <bz-card-header>
+                    <span class="title"> Theme </span>
+                </bz-card-header>
+                <bz-card-content>
+                    <div class="card-badge" style="margin-bottom:10px"> 
+                        <div style="margin-bottom:10px">To Run themes have to include <span class="fk-badge">setThemes()</span> in style.scss </div>
+                    <bz-code-box>
+                        <span highlight [bzCodeBox]="HomeConstant.THEME" class="scss"></span>
+                    </bz-code-box>
+                </div>
+                </bz-card-content>
+            </bz-card>
+
+        </div>
+    </div>
+    <!--  Affix -->
+    <div class="code-card">
+        <bz-affix title="Overview" [toc]="[
+            {fragment: 'whatBlazing', title: 'What is BlaziNG' }, 
+            {fragment: 'features', title: 'Features' },
+            {fragment: 'browserSupport',  title: 'Browser support' },
+            {fragment: 'angularSupport',  title: 'Angular support' },
+            {fragment: 'installation', title: 'Installation' },
+            {fragment: 'style', title: 'Style configuration' },
+            {fragment: 'asset', title: 'Assets configuration' },
+            {fragment: 'animation', title: 'Animation' },
+            {fragment: 'theme', title: 'Theme' }
+        ]">
+        </bz-affix>
+    </div>
+</div>

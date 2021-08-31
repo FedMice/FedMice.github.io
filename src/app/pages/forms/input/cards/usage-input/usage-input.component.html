@@ -1,0 +1,29 @@
+ <!--  Usage -->
+ <bz-card class="card-top" id="usage">
+    <bz-card-header>
+        <span class="title"> Usage </span>
+    </bz-card-header>
+    <bz-card-content>
+        <bz-tabset>
+            <bz-tab tabTitle="ShowCase">
+
+                <bz-input class="fk-r-mt-5 fk-block" label="Write your name:" [(ngModel)]="name" placeholder="Name" ></bz-input>
+                <div class="fk-r-mt-10 fk-r-ml-3">{{name}}</div>
+
+            </bz-tab>
+            <bz-tab tabTitle="ts">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="InputConstant.USAGE_TS" class="typeScript"></span>
+                </bz-code-box>
+            </bz-tab>
+            <bz-tab tabTitle="html">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="InputConstant.USAGE_HTML" class="html"></span>
+                </bz-code-box>
+            </bz-tab>
+           
+        </bz-tabset>
+
+
+    </bz-card-content>
+</bz-card>

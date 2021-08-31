@@ -1,0 +1,46 @@
+<!--  Duration -->
+<bz-card class="card-top" id="duration">
+    <bz-card-header>
+        <span class="title"> Duration </span>
+    </bz-card-header>
+    <bz-card-content>
+        <div class="card-badge content-card">
+            <span class="fk-badge">Duration</span> defines time that toast is displayed on screen.
+        </div>
+
+        <bz-tabset>
+            <!-- showcase -->
+            <bz-tab tabTitle="ShowCase">
+                <div class="fk-center showcase-container fk-column">
+
+                    <!--  Right -->
+                    <div>
+                        <button bzButton status="primary"
+                            (click)="toastrService.showSuccess('Right Top', {duration: 2000})" class="space-group">
+                            2000 ms
+                        </button>
+                        <button bzButton status="primary"
+                            (click)="toastrService.showInfo('Right Center', {duration: 500})" class="space-group">
+                           500 ms
+                        </button>
+                    </div>
+
+                </div>
+
+            </bz-tab>
+            <!--  ts -->
+            <bz-tab tabTitle="ts">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="ToasterConstant.POSITION_TS" class="typeScript"></span>
+                </bz-code-box>
+            </bz-tab>
+            <!--  html -->
+            <bz-tab tabTitle="html">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="ToasterConstant.DURATION_HTML" class="html"></span>
+                </bz-code-box>
+            </bz-tab>
+        </bz-tabset>
+
+    </bz-card-content>
+</bz-card>

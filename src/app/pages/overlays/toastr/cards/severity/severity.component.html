@@ -1,0 +1,45 @@
+<bz-card class="card-top" id="severity">
+    <bz-card-header>
+        <span class="title"> Severity </span>
+    </bz-card-header>
+    <bz-card-content>
+        <div class="card-badge content-card"> 
+            <span class="fk-badge">Severity</span> sets toast icon and color.
+        </div>
+
+        <bz-tabset>
+            <!-- showcase -->
+            <bz-tab tabTitle="ShowCase">
+                <div class="fk-center showcase-container" >
+               
+                    <button bzButton status="primary" (click)="toastrService.showSuccess('Success Toast')" class="space-group"> 
+                       Success
+                    </button>
+                    <button bzButton status="primary" (click)="toastrService.showDanger('Danger Toast')" class="space-group">
+                        Danger
+                    </button>
+                    <button bzButton status="primary" (click)="toastrService.showInfo('Info Toast')" class="space-group"> 
+                        Info
+                    </button>
+                    <button bzButton status="primary" (click)="toastrService.showWarning('Warning Toast')" class="space-group"> 
+                        Warning
+                    </button>
+                    
+                </div>
+            </bz-tab>
+            <!--  ts -->
+            <bz-tab tabTitle="ts">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="ToasterConstant.SEVERITY_TS" class="typeScript"></span>
+                </bz-code-box>
+            </bz-tab>
+            <!--  html -->
+            <bz-tab tabTitle="html">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="ToasterConstant.SEVERITY_HTML" class="html"></span>
+                </bz-code-box>
+            </bz-tab>
+        </bz-tabset>
+       
+    </bz-card-content>
+</bz-card>

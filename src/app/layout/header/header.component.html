@@ -1,0 +1,16 @@
+<div class="fk-header-component">
+    <div class="fk-header-container">
+      <bz-icon class="fa fa-list toggle-icon" (click)="toggleSidebar()"></bz-icon>
+      <span  > <strong class="title">BlaziNG</strong><strong class="subtitle">alpha</strong> </span>
+
+      <div style="width:100px" class="fk-p-ml-10">
+        <bz-dropdown [options]="langaugeArray" (onSelect)="changeLanguage($event)" optionLabel="language" 
+        [selected] = "{ language: 'it' }"
+        ></bz-dropdown>
+      </div>
+
+    </div>
+    
+    <div class="fk-header-container">
+    </div>
+</div>

@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'node_modules/blazing/src/lib/theme/_mixins.scss';
+
+@include setThemes();
+
+.hljs{
+    padding:0;
+    background: #1d2447!important;
+}
+
+
+.ul-li {
+    margin-top:5px;
+}
+
+
+.card-top {
+    margin-top:30px
+}
+
+.title {
+    font-size: 25px;
+}
+
+.code-card {
+    margin-left:20px
+}
+
+.card-badge .fk-badge {
+    font-weight: 600;
+    background-color: #f3f3f3;
+    color: #007bff
+}
+
+.showcase-container {
+    height: 250px;
+}
+
+.line-spacing {
+   margin-top: 8px;
+}
+
+.space-group {
+    margin-right: 7px;
+}
+
+
+
+ 
+

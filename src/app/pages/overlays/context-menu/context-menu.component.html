@@ -1,0 +1,74 @@
+<div class="fk-row">
+    <div class="fk-col-14">
+        <div class="fk-column">
+
+            <!--  Context menu -->
+            <bz-card>
+                <bz-card-header>
+                    <span class="title">Context menu</span>
+                </bz-card-header>
+            </bz-card>
+
+            <!--  Installation -->
+            <bz-card class="card-top" id="installation">
+                <bz-card-header>
+                    <span class="title"> Installation </span>
+                </bz-card-header>
+                <bz-card-content>
+                    <div class="card-badge content-card fk-r-mb-4">Import
+                        <span class="fk-badge">BzContextMenuModule</span> to your feature module.
+                    </div>
+                    <bz-code-box>
+                        <span highlight [bzCodeBox]="ContextMenuConstant.INSTALLATION" class="typeScript"></span>
+                    </bz-code-box>
+                </bz-card-content>
+            </bz-card>
+
+            <!--  Usage -->
+            <bz-card class="card-top" id="usage">
+                <bz-card-header>
+                    <span class="title"> Usage </span>
+                </bz-card-header>
+                <bz-card-content>
+                    <bz-tabset>
+                        <bz-tab tabTitle="ShowCase">
+
+                            <div class="fk-center fk-r-mt-9 fk-r-mb-15">
+                                <button bzButton status="primary" [bzContextMenu]="tmpl"> Show Context menu </button>
+                            </div>
+
+                            <ng-template #tmpl>
+                              
+                                    <li class="context-menu-row">
+                                        <bz-icon class="fa fa-user fk-r-mr-1"></bz-icon> profile
+                                    </li>
+                                    <li class="context-menu-row">
+                                        <bz-icon class="fa fa-sign-out fk-r-mr-1"></bz-icon> logout
+                                    </li>
+                             
+                            </ng-template>
+
+
+                        </bz-tab>
+                        <bz-tab tabTitle="html">
+                            <bz-code-box>
+                                <span highlight [bzCodeBox]="ContextMenuConstant.USAGE_HTML" class="html"></span>
+                            </bz-code-box>
+                        </bz-tab>
+                    </bz-tabset>
+
+
+                </bz-card-content>
+            </bz-card>
+
+        </div>
+    </div>
+    <!--  Affix -->
+    <div class="code-card">
+        <bz-affix title="Overview" [toc]="[
+            { fragment: 'installation', title: 'Installation'},
+            {fragment: 'usage', title: 'Usage' }
+        ]">
+        </bz-affix>
+    </div>
+</div>
