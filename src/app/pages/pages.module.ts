@@ -4,7 +4,8 @@ import { LayoutModule } from '../layout/layout.module';
 import { PagesComponent } from './pages.component';
 import { PagesRoutingModule } from './pages-routing.module';
 import {  HomeComponent} from './home/home.component';
-import {   BzAffixModule, BzButtonModule, BzCardModule, BzCodeBoxModule, BzIconModule } from 'blazing';
+import {   BzAffixModule, BzButtonModule, BzCardModule, BzCodeBoxModule, 
+  BzIconModule, BzTranslateModule } from 'blazing';
 import { UtilityDirectiveModule } from '../utilities/pipe/utility-directive.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RouterModule } from '@angular/router';
@@ -24,7 +25,8 @@ import { RouterModule } from '@angular/router';
     UtilityDirectiveModule,
     BzAffixModule,
     BzIconModule,
-    RouterModule
+    RouterModule,
+    BzTranslateModule
   ],
   exports:[PagesComponent]
 })

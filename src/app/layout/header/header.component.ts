@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { BzLayoutService } from 'blazing';
 
 @Component({
@@ -6,12 +6,20 @@ import { BzLayoutService } from 'blazing';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent  {
+export class HeaderComponent {
 
-constructor( private layoutService: BzLayoutService) {}
+  constructor(private layoutService: BzLayoutService) { }
 
-public toggleSidebar() : void {
-   this.layoutService.toggleMenuSidebar();
+  public toggleSidebar(): void {
+    this.layoutService.toggleMenuSidebar();
+  }
+
 }
 
-}
+
+export const LANGUAGE = [
+  { language: 'it' },
+  { language: 'en' },
+  { language: 'es' },
+  { language: 'de' }
+]
