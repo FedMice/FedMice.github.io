@@ -1,0 +1,44 @@
+<!--  Error message -->
+<bz-card class="card-top" id="errorMessage">
+    <bz-card-header>
+        <span class="title"> Error message </span>
+    </bz-card-header>
+
+    <bz-card-content>
+        <div class="card-badge">
+            Adding <span class="fk-badge"> bz-error </span> element inside the component it will
+            displayed a error message under the form field.
+        </div>
+        <bz-tabset>
+            <bz-tab tabTitle="ShowCase">
+
+
+                <div class="fk-center mini-showcase-container fk-r-mt-3">
+
+                    <form [formGroup]="form" class="dropdown-container">
+                        <bz-dropdown [options]="countries" formControlName="country" optionLabel="name" 
+                             placeholder="country" label="County:">
+                            <bz-error>Error</bz-error>
+                        </bz-dropdown>
+
+                        <button bzButton status="primary" class="fk-r-mt-4">Submit</button>
+                    </form>
+                </div>
+
+            </bz-tab>
+            <!-- Ts tab -->
+            <bz-tab tabTitle="ts">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DropdownConstant.ERROR_MESSAGE_TS" class="typeScript"></span>
+                </bz-code-box>
+            </bz-tab>
+            <!--  HTML tab -->
+            <bz-tab tabTitle="html">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DropdownConstant.ERROR_MESSAGE_HTML" class="html"></span>
+                </bz-code-box>
+            </bz-tab>
+        </bz-tabset>
+
+    </bz-card-content>
+</bz-card>

@@ -1,8 +1,9 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BzAffixModule, BzButtonModule, BzCardModule, BzCodeBoxModule, 
-    BzIconModule, BzInputModule, BzTabsetModule } from "blazing";
+  BzErrorModule, 
+    BzIconModule, BzInputModule, BzTabsetModule, BzDatePickerModule, BzDropdownModule } from "blazing";
 import { UtilityDirectiveModule } from "src/app/utilities/pipe/utility-directive.module";
 import { FormsRoutingModule } from "./forms-routing.module";
 import { FormsComponent } from "./forms.component";
@@ -15,6 +16,17 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 import { TextareaComponent } from './textarea/textarea.component';
 import { UsageInputComponent } from './input/cards/usage-input/usage-input.component';
 import { ValidationComponent } from './input/cards/validation/validation.component';
+import { PrefixSuffixComponent } from './input/cards/prefix-suffix/prefix-suffix.component';
+import { StatusComponent } from './input/cards/status/status.component';
+import { DisabledInputComponent } from './input/cards/disabled-input/disabled-input.component';
+import { InputButtonComponent } from './input/cards/input-button/input-button.component';
+import { UsageComponent } from './dropdown/cards/usage/usage.component';
+import { ErrorMessageComponent } from './dropdown/cards/error-message/error-message.component';
+import { ValueBindingComponent } from './dropdown/cards/value-binding/value-binding.component';
+import { StatusDropdownComponent } from './dropdown/cards/status-dropdown/status-dropdown.component';
+import { DisabledDropdownComponent } from './dropdown/cards/disabled-dropdown/disabled-dropdown.component';
+import { MultiDropdownComponent } from "./dropdown/cards/multi-dropdown/multi-dropdown.component";
+
 
 const COMPONENTS = [
     FormsComponent, 
@@ -25,11 +37,22 @@ const COMPONENTS = [
     SwitchComponent, 
     DatePickerComponent, 
     TextareaComponent,
-    UsageInputComponent
+    UsageInputComponent,
+    PrefixSuffixComponent,
+    ValidationComponent,
+    StatusComponent,
+    DisabledInputComponent,
+    InputButtonComponent,
+    UsageComponent,
+    ErrorMessageComponent,
+    ValueBindingComponent, 
+    StatusDropdownComponent,
+    DisabledDropdownComponent,
+    MultiDropdownComponent
   ]
   
   @NgModule({
-    declarations: [...COMPONENTS, ValidationComponent],
+    declarations: [...COMPONENTS],
     imports: [
       CommonModule,
       FormsRoutingModule,
@@ -41,7 +64,11 @@ const COMPONENTS = [
       BzButtonModule,
       BzInputModule,
       FormsModule,
-      BzIconModule
+      BzIconModule,
+      BzErrorModule,
+      ReactiveFormsModule,
+      BzDatePickerModule,
+      BzDropdownModule,
     ],
     exports: [...COMPONENTS]
   })

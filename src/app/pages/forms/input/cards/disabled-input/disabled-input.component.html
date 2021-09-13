@@ -1,0 +1,29 @@
+<!--  DisabledInput -->
+<bz-card class="card-top" id="disabledInput">
+    <bz-card-header>
+        <span class="title"> Disabled input </span>
+    </bz-card-header>
+
+    <bz-card-content>
+        <div class="card-badge">
+            It is possible to disable input by <span class="fk-badge"> disabledAttr </span> attribute.
+        </div>
+        <bz-tabset>
+            <bz-tab tabTitle="ShowCase">
+
+                <div>
+                    <!-- Input disabled -->
+                    <bz-input label="Input disabled:" disableAttr></bz-input>
+                </div>
+
+            </bz-tab>
+            <!--  HTML tab -->
+            <bz-tab tabTitle="html">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="InputConstant.DISABLED_HTML" class="html"></span>
+                </bz-code-box>
+            </bz-tab>
+        </bz-tabset>
+
+    </bz-card-content>
+</bz-card>

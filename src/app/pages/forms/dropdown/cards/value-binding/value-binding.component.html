@@ -1,0 +1,46 @@
+<!--  Value binding -->
+<bz-card class="card-top" id="valueBinding">
+    <bz-card-header>
+        <span class="title"> Value binding </span>
+    </bz-card-header>
+
+    <bz-card-content>
+        <div class="card-badge">
+            For default dropdown pass all the model when it is submitted. 
+            <div class="fk-p-mt-3">
+                Adding <span class="fk-badge"> optionValue </span> attribute to customize the property to pass as the value.
+            </div>
+        </div>
+        <bz-tabset>
+            <bz-tab tabTitle="ShowCase">
+
+                <div class="fk-center mini-showcase-container">
+                    <bz-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" class="dropdown-container"
+                        placeholder="country" label="County:" optionValue="capital" ></bz-dropdown>
+
+                </div>
+
+                 <!-- Selected value -->
+                 <div *ngIf="selectedCountry" class="fk-r-mt-2"><span class="fk-p-mr-10">Country capital is:</span>
+                    <strong>{{selectedCountry}}</strong>
+                </div>
+
+                
+
+            </bz-tab>
+             <!-- Ts tab -->
+             <bz-tab tabTitle="ts">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DropdownConstant.USAGE_TS" class="typeScript"></span>
+                </bz-code-box>
+            </bz-tab>
+            <!--  HTML tab -->
+            <bz-tab tabTitle="html">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DropdownConstant.VALUE_BINDING_HTML" class="html"></span>
+                </bz-code-box>
+            </bz-tab>
+        </bz-tabset>
+
+    </bz-card-content>
+</bz-card>

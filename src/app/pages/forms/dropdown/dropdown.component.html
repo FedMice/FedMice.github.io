@@ -1,1 +1,63 @@
-<p>dropdown works!</p>
+<div class="fk-row">
+    <div class="fk-col-14">
+        <div class="fk-column">
+
+            <!--  Input -->
+            <bz-card>
+                <bz-card-header>
+                    <span class="title">Dropdown</span>
+                </bz-card-header>
+            </bz-card>
+
+            <!--  Installation -->
+            <bz-card class="card-top" id="installation">
+                <bz-card-header>
+                    <span class="title"> Installation </span>
+                </bz-card-header>
+                <bz-card-content>
+                    <div class="card-badge content-card fk-r-mb-4">Import
+                        <span class="fk-badge">BzInputModule</span> to your feature module.
+                    </div>
+                    <bz-code-box>
+                        <span highlight [bzCodeBox]="DropdownConstant.INSTALLATION" class="typeScript"></span>
+                    </bz-code-box>
+                </bz-card-content>
+            </bz-card>
+
+            <!-- Usage -->
+            <app-usage class="card-top"></app-usage>
+
+            <!-- Multi -->
+            <app-multi-dropdown class="card-top"></app-multi-dropdown>
+
+            <!--  Value binding -->
+            <app-value-binding class="card-top"></app-value-binding>
+
+            <!-- Error message -->
+            <app-error-message class="card-top"></app-error-message>
+
+            <!-- Status dropdown -->
+            <app-status-dropdown class="card-top"></app-status-dropdown>
+
+            <!-- Disabled dropdown -->
+            <app-disabled-dropdown class="card-top"></app-disabled-dropdown>
+
+           
+
+        </div>
+    </div>
+    <!--  Affix -->
+    <div class="code-card">
+        <bz-affix title="Overview" [toc]="[
+            { fragment: 'installation', title: 'Installation'},
+            { fragment: 'usage', title: 'Usage'},
+            { fragment: 'multiDropdown', title: 'Multiple'},
+            { fragment: 'valueBinding', title: 'Value binding'},
+            { fragment: 'errorMessage', title: 'Error message'},
+            { fragment: 'statusDrop', title: 'Status'},
+            { fragment: 'disabledDrop', title: 'Disabled'}
+            
+        ]">
+        </bz-affix>
+    </div>
+</div>

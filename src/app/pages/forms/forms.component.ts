@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CheckboxConstant } from './checkbox/checkbox.constant';
+import { DropdownConstant } from './dropdown/dropdown.constant';
 import { InputConstant } from './input/input.constant';
 
 @Component({
@@ -15,6 +16,10 @@ export class FormsComponent  {
 
   public get CheckboxConstant(): any {
     return CheckboxConstant;
+  }
+
+  public get DropdownConstant(): any {
+    return DropdownConstant;
   }
 
 }

@@ -1,0 +1,32 @@
+<!--  Usage -->
+<bz-card class="card-top" id="usage">
+    <bz-card-header>
+        <span class="title"> Usage </span>
+    </bz-card-header>
+
+    <bz-card-content>
+        <bz-tabset>
+            <bz-tab tabTitle="ShowCase">
+
+                <div class="fk-center mini-showcase-container">
+                    <bz-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" class="dropdown-container"
+                         label="County:" optionValue="capital" placeholder="Country"></bz-dropdown>
+                </div>
+
+            </bz-tab>
+            <!-- Ts tab -->
+            <bz-tab tabTitle="ts">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DropdownConstant.USAGE_TS" class="typeScript"></span>
+                </bz-code-box>
+            </bz-tab>
+            <!--  HTML tab -->
+            <bz-tab tabTitle="html">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DropdownConstant.USAGE_HTML" class="html"></span>
+                </bz-code-box>
+            </bz-tab>
+        </bz-tabset>
+
+    </bz-card-content>
+</bz-card>

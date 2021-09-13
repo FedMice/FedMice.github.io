@@ -1,0 +1,31 @@
+<!--  Input button -->
+<bz-card class="card-top" id="inputButton">
+    <bz-card-header>
+        <span class="title"> Button </span>
+    </bz-card-header>
+
+    <bz-card-content>
+        <div class="card-badge">
+            It is possible to obtain an input with button using <span class="fk-badge"> bzInputButton </span> attribute on 
+            the element button inside the component.
+        </div>
+        <bz-tabset>
+            <bz-tab tabTitle="ShowCase">
+
+                <bz-input label="Input with button">
+                    <button bzInputButton status="primary">
+                        <bz-icon iconName="fa fa-window-maximize"></bz-icon>
+                    </button>
+                </bz-input>
+
+            </bz-tab>
+            <!--  HTML tab -->
+            <bz-tab tabTitle="html">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="InputConstant.BUTTON_HTML" class="html"></span>
+                </bz-code-box>
+            </bz-tab>
+        </bz-tabset>
+
+    </bz-card-content>
+</bz-card>

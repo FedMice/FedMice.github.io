@@ -1,0 +1,38 @@
+<!-- Disabled -->
+<bz-card class="card-top" id="disabledDrop">
+    <bz-card-header>
+        <span class="title"> Disabled dropdown</span>
+    </bz-card-header>
+
+    <bz-card-content>
+        <div class="card-badge">
+            It is possible to disable dropdown by <span class="fk-badge"> disabledAttr </span> attribute.
+        </div>
+        <bz-tabset>
+            <bz-tab tabTitle="ShowCase">
+
+                <div class="mini-showcase-container fk-r-mt-5">
+                  
+                    <bz-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" class="dropdown-container fk-r-mt-4"
+                        placeholder="country" label="Disabled :" disableAttr></bz-dropdown>
+               
+                </div>
+
+            </bz-tab>
+            <!-- Ts tab -->
+            <bz-tab tabTitle="ts">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DropdownConstant.USAGE_TS" class="typeScript"></span>
+                </bz-code-box>
+            </bz-tab>
+            <!--  HTML tab -->
+            <bz-tab tabTitle="html">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DropdownConstant.STATUS_HTML" class="html"></span>
+                </bz-code-box>
+            </bz-tab>
+        </bz-tabset>
+
+    </bz-card-content>
+</bz-card>
+

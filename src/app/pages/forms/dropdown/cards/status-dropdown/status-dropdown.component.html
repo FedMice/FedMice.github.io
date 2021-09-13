@@ -1,0 +1,43 @@
+<!-- Status  -->
+<bz-card class="card-top" id="statusDrop">
+    <bz-card-header>
+        <span class="title"> Status </span>
+    </bz-card-header>
+
+    <bz-card-content>
+        <div class="card-badge">
+            It is possible set dropdown border color whith <span class="fk-badge"> status </span> attribute.
+            Default value is basic.
+        </div>
+        <bz-tabset>
+            <bz-tab tabTitle="ShowCase">
+
+                <div class="showcase-container fk-column">
+                    <!-- Basic -->
+                    <bz-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" class="dropdown-container fk-r-mt-4"
+                        placeholder="country" label="Basic:" status="basic"></bz-dropdown>
+                    <!-- Primary -->
+                    <bz-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" class="dropdown-container fk-r-mt-4"
+                        placeholder="country" label="Primary:" status="primary"></bz-dropdown>
+                    <!-- Danger -->
+                    <bz-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" class="dropdown-container fk-r-mt-4"
+                        placeholder="country" label="County:" status="danger" ></bz-dropdown>
+                </div>
+
+            </bz-tab>
+            <!-- Ts tab -->
+            <bz-tab tabTitle="ts">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DropdownConstant.USAGE_TS" class="typeScript"></span>
+                </bz-code-box>
+            </bz-tab>
+            <!--  HTML tab -->
+            <bz-tab tabTitle="html">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DropdownConstant.STATUS_HTML" class="html"></span>
+                </bz-code-box>
+            </bz-tab>
+        </bz-tabset>
+
+    </bz-card-content>
+</bz-card>

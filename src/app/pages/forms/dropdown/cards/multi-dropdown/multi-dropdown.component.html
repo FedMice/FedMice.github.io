@@ -1,0 +1,37 @@
+<!--  Multi drodpdown -->
+<bz-card class="card-top" id="multiDropdown">
+    <bz-card-header>
+        <span class="title"> Multiple </span>
+    </bz-card-header>
+
+    <bz-card-content>
+        <div class="card-badge">
+            It cane be used as multi-dropdown if you add <span class="fk-badge"> multi </span> attribute to
+            component.
+            In this case, it propagates arrays.
+        </div>
+        <bz-tabset>
+            <bz-tab tabTitle="ShowCase">
+
+                <div class="fk-center mini-showcase-container">
+                    <bz-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name"
+                        class="dropdown-container" label="County:" placeholder="Country" multi ></bz-dropdown>
+                </div>
+
+            </bz-tab>
+            <!-- Ts tab -->
+            <bz-tab tabTitle="ts">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DropdownConstant.USAGE_TS" class="typeScript"></span>
+                </bz-code-box>
+            </bz-tab>
+            <!--  HTML tab -->
+            <bz-tab tabTitle="html">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DropdownConstant.MULTIPLE_HTML" class="html"></span>
+                </bz-code-box>
+            </bz-tab>
+        </bz-tabset>
+
+    </bz-card-content>
+</bz-card>

@@ -1,0 +1,33 @@
+<!--  Usage -->
+<bz-card class="card-top" id="usage">
+    <bz-card-header>
+        <span class="title"> Usage </span>
+    </bz-card-header>
+    <bz-card-content>
+        <div class="card-badge content-card"> To open dialog have to use
+            <span class="fk-badge">BzDialogService</span>
+        </div>
+        <bz-tabset>
+            <!-- showcase -->
+            <bz-tab tabTitle="ShowCase">
+
+                <div class="fk-center showcase-container">
+                    <button bzButton status="primary" (click)="showDialog()">Show Dialog</button>
+                </div>
+            </bz-tab>
+            <!--  ts -->
+            <bz-tab tabTitle="ts">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DialogConstant.USAGE_TS" class="typeScript"></span>
+                </bz-code-box>
+            </bz-tab>
+            <!--  html -->
+            <bz-tab tabTitle="html">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DialogConstant.USAGE_HTML" class="html"></span>
+                </bz-code-box>
+            </bz-tab>
+        </bz-tabset>
+    </bz-card-content>
+</bz-card>
+

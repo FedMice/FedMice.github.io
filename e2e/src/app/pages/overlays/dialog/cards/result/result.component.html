@@ -1,0 +1,33 @@
+<!--  Resalt -->
+<bz-card class="card-top" id="result">
+    <bz-card-header>
+        <span class="title"> Result </span>
+    </bz-card-header>
+    <bz-card-content>
+        <div class="card-badge content-card"> Subscribing to <span class="fk-badge">BzDialogService.showDialog(message)</span> it is possible to recive the result when the dialog is closed
+        </div>
+        <bz-tabset>
+            <!-- showcase -->
+            <bz-tab tabTitle="ShowCase">
+
+                <div class="fk-center showcase-container">
+                    <button *ngIf="!name" bzButton status="primary" (click)="showDialog()">Show Dialog</button>
+                    <div *ngIf="name" class="fk-center fk-display-8-6 fk-mb-6">  {{name}} </div>
+                </div>
+                
+            </bz-tab>
+            <!--  ts -->
+            <bz-tab tabTitle="ts">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DialogConstant.RESULT_TS" class="typeScript"></span>
+                </bz-code-box>
+            </bz-tab>
+            <!--  html -->
+            <bz-tab tabTitle="html">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="DialogConstant.RESULT_HTML" class="html"></span>
+                </bz-code-box>
+            </bz-tab>
+        </bz-tabset>
+    </bz-card-content>
+</bz-card>

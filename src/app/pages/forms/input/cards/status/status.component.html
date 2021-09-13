@@ -1,0 +1,32 @@
+<!--  Validation -->
+<bz-card class="card-top" id="status">
+    <bz-card-header>
+        <span class="title"> Status </span>
+    </bz-card-header>
+
+    <bz-card-content>
+        <div class="card-badge">
+            It is possible set input color whith <span class="fk-badge"> status </span> attribute.
+            Default value is basic.
+        </div>
+        <bz-tabset>
+            <bz-tab tabTitle="ShowCase">
+
+                <bz-input label="Basic:" status="basic"></bz-input>
+
+                <bz-input label="Primary:" status="primary" class="fk-block fk-r-mt-2"></bz-input>
+
+                <bz-input label="Danger:" status="danger" class="fk-block fk-r-mt-2"></bz-input>
+
+
+            </bz-tab>
+            <!--  HTML tab -->
+            <bz-tab tabTitle="html">
+                <bz-code-box>
+                    <span highlight [bzCodeBox]="InputConstant.STATUS_HTML" class="html"></span>
+                </bz-code-box>
+            </bz-tab>
+        </bz-tabset>
+
+    </bz-card-content>
+</bz-card>

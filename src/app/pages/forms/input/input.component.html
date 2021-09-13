@@ -27,13 +27,33 @@
           <!--  Usage -->
            <app-usage-input class="card-top"></app-usage-input>
 
+           <!-- Prefix and Suffix -->
+           <app-prefix-suffix class="card-top" ></app-prefix-suffix>
+
+           <!-- Validation -->
+           <app-validation class="card-top"></app-validation>
+
+           <!-- Status -->
+           <app-status class="card-top"></app-status>
+
+           <!-- Disabled input -->
+           <app-disabled-input class="card-top"></app-disabled-input>
+           
+           <!-- Input button -->
+           <app-input-button class="card-top"></app-input-button>
+           
         </div>
     </div>
     <!--  Affix -->
     <div class="code-card">
         <bz-affix title="Overview" [toc]="[
             { fragment: 'installation', title: 'Installation'},
-            {fragment: 'usage', title: 'Usage' }
+            {fragment: 'usage', title: 'Usage' },
+            {fragment: 'prefixSuffix', title: 'Prefix and Suffix' },
+            {fragment: 'validation', title: 'Error message' },
+            {fragment: 'status', title: 'Status' },
+            {fragment: 'disabledInput', title: 'Disabled' },
+            {fragment: 'inputButton', title: 'Button' }
         ]">
         </bz-affix>
     </div>
