@@ -2,10 +2,11 @@ import { Injectable } from "@angular/core";
 import { of as observableOf, Observable } from 'rxjs';
 
 
+
 @Injectable({providedIn:"root"})
 export class OrdineMockService {
 
-   getOrdineList(): Observable<any[]> {
+   getOrdineList(): Observable<any> {
         return observableOf(ORDINI);
    }
 
@@ -16,11 +17,8 @@ export class OrdineMockService {
 }
 
 
-export const ORDINI : any[] = [
-    {
-        "messages":[
-           
-        ],
+export const ORDINI : any = {
+        "messages":[],
         "response":{
            "_embedded":{
               "ordineDtoList":[
@@ -69,11 +67,7 @@ export const ORDINI : any[] = [
                  }
               ]
            },
-           "_links":{
-              "self":{
-                 "href":"http://127.0.0.1:8014/demo/ordine?page=0&size=20"
-              }
-           },
+          
            "page":{
               "size":20,
               "totalElements":1,
@@ -83,7 +77,7 @@ export const ORDINI : any[] = [
         },
         "errorDetails":null
      }
-]
+
 
 
 export const ORDINE = 

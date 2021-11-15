@@ -57,8 +57,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var blazing__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! blazing */ "pYbk");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 /* harmony import */ var _shared_base_base_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../shared/base/base-api.service */ "GXZf");
-/* harmony import */ var src_moc_ordine_ordine_mock_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/moc/ordine/ordine-mock.service */ "Icb1");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var voila2_runtime_ng__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! voila2-runtime-ng */ "WGmK");
+/* harmony import */ var src_moc_ordine_ordine_mock_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/moc/ordine/ordine-mock.service */ "Icb1");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
 
 
 
@@ -75,7 +77,7 @@ class OrdineApiService extends _shared_base_base_api_service__WEBPACK_IMPORTED_M
         this.url = "demo/ordine";
     }
     getOrdineByCriteria(options) {
-        return this.getEntityListByCriteria(this.url, options);
+        return this.ordineMock.getOrdineList();
     }
     addOrdine(ordine) {
         const fixedOrdine = this.stringifyDate(ordine, 'dataOrdine');
@@ -98,8 +100,8 @@ class OrdineApiService extends _shared_base_base_api_service__WEBPACK_IMPORTED_M
         window.open(this.baseUrl + "/" + this.url + '/pdf/' + id);
     }
 }
-OrdineApiService.ɵfac = function OrdineApiService_Factory(t) { return new (t || OrdineApiService)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](blazing__WEBPACK_IMPORTED_MODULE_1__["DateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](src_moc_ordine_ordine_mock_service__WEBPACK_IMPORTED_MODULE_4__["OrdineMockService"])); };
-OrdineApiService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjectable"]({ token: OrdineApiService, factory: OrdineApiService.ɵfac });
+OrdineApiService.ɵfac = function OrdineApiService_Factory(t) { return new (t || OrdineApiService)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](blazing__WEBPACK_IMPORTED_MODULE_1__["DateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](src_moc_ordine_ordine_mock_service__WEBPACK_IMPORTED_MODULE_5__["OrdineMockService"])); };
+OrdineApiService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjectable"]({ token: OrdineApiService, factory: OrdineApiService.ɵfac });
 
 
 /***/ }),
@@ -223,72 +225,65 @@ class OrdineMockService {
 }
 OrdineMockService.ɵfac = function OrdineMockService_Factory(t) { return new (t || OrdineMockService)(); };
 OrdineMockService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: OrdineMockService, factory: OrdineMockService.ɵfac, providedIn: "root" });
-const ORDINI = [
-    {
-        "messages": [],
-        "response": {
-            "_embedded": {
-                "ordineDtoList": [
-                    {
-                        "objectKey": "1~2020",
-                        "objectTitle": "1~2020",
+const ORDINI = {
+    "messages": [],
+    "response": {
+        "_embedded": {
+            "ordineDtoList": [
+                {
+                    "objectKey": "1~2020",
+                    "objectTitle": "1~2020",
+                    "idOrdine": 1,
+                    "anno": 2020,
+                    "dataOrdine": "2020-12-13",
+                    "urgente": true,
+                    "ragioneSociale": "dottore",
+                    "idTipoOrdine": null,
+                    "theClienteObjectTitle": "dottore",
+                    "theClienteObjectKey": "dottore",
+                    "theTipoOrdineObjectTitle": null,
+                    "theTipoOrdineObjectKey": null,
+                    "theOrdinePadreObjectTitle": null,
+                    "theOrdinePadreObjectKey": null,
+                    "ordineKey": {
+                        "entityState": "",
                         "idOrdine": 1,
                         "anno": 2020,
-                        "dataOrdine": "2020-12-13",
-                        "urgente": true,
-                        "ragioneSociale": "dottore",
-                        "idTipoOrdine": null,
-                        "theClienteObjectTitle": "dottore",
-                        "theClienteObjectKey": "dottore",
-                        "theTipoOrdineObjectTitle": null,
-                        "theTipoOrdineObjectKey": null,
-                        "theOrdinePadreObjectTitle": null,
-                        "theOrdinePadreObjectKey": null,
-                        "ordineKey": {
-                            "entityState": "",
-                            "idOrdine": 1,
-                            "anno": 2020,
-                            "updatedEntityState": false,
-                            "createdEntityState": false,
-                            "deletedEntityState": false
-                        },
-                        "_links": {
-                            "self": [
-                                {
-                                    "href": "http://localhost:8090/demo/ordine/1~2020"
-                                },
-                                {
-                                    "href": "http://localhost:8090/demo/ordine/1~2020"
-                                }
-                            ],
-                            "theCliente": {
-                                "href": "http://localhost:8090/demo/cliente/dottore"
+                        "updatedEntityState": false,
+                        "createdEntityState": false,
+                        "deletedEntityState": false
+                    },
+                    "_links": {
+                        "self": [
+                            {
+                                "href": "http://localhost:8090/demo/ordine/1~2020"
                             },
-                            "theRigaOrdine": {
-                                "href": "http://localhost:8090/demo/riga-ordine/findByTheOrdine/1~2020"
-                            },
-                            "theOrdineFigli": {
-                                "href": "http://localhost:8090/demo/ordine/findByTheOrdinePadre/1~2020"
+                            {
+                                "href": "http://localhost:8090/demo/ordine/1~2020"
                             }
+                        ],
+                        "theCliente": {
+                            "href": "http://localhost:8090/demo/cliente/dottore"
+                        },
+                        "theRigaOrdine": {
+                            "href": "http://localhost:8090/demo/riga-ordine/findByTheOrdine/1~2020"
+                        },
+                        "theOrdineFigli": {
+                            "href": "http://localhost:8090/demo/ordine/findByTheOrdinePadre/1~2020"
                         }
                     }
-                ]
-            },
-            "_links": {
-                "self": {
-                    "href": "http://127.0.0.1:8014/demo/ordine?page=0&size=20"
                 }
-            },
-            "page": {
-                "size": 20,
-                "totalElements": 1,
-                "totalPages": 1,
-                "number": 0
-            }
+            ]
         },
-        "errorDetails": null
-    }
-];
+        "page": {
+            "size": 20,
+            "totalElements": 1,
+            "totalPages": 1,
+            "number": 0
+        }
+    },
+    "errorDetails": null
+};
 const ORDINE = {
     "messages": [],
     "response": {

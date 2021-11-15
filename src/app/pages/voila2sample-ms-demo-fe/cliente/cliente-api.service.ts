@@ -7,7 +7,6 @@ import { map } from "rxjs/operators";
 import { BaseApiService } from "../../../shared/base/base-api.service";
 import { ApiListResponse, ApiResponse } from "voila2-runtime-ng";
 import { ICliente, IClienteDto } from "./cliente.interface";
-import { ClienteMockService } from "src/moc/ordine/cliente-mock.service";
 
 
 @Injectable()
@@ -17,10 +16,10 @@ export class ClienteApiService extends BaseApiService<ICliente, IClienteDto>{
   private url: string = "demo/cliente";
   
 
-  constructor(httpClient: HttpClient, dateService: DateService, private clienteMock: ClienteMockService) { super(httpClient, dateService) }
+  constructor(httpClient: HttpClient, dateService: DateService) { super(httpClient, dateService) }
 
   public getClienteByCriteria(options?: HttpParams): Observable<ApiListResponse<ICliente,IClienteDto>> {
-    return this.clienteMock.getClienteList();
+    return this.getEntityListByCriteria(this.url, options);
   }
 
   public addCliente(cliente: ICliente) : Observable<ApiResponse<ICliente>> {

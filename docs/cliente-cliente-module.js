@@ -753,6 +753,36 @@ class DetailClienteComponent extends _shared_base_base_component__WEBPACK_IMPORT
         this.setTabPageStatusOnInit();
         if (Object(voila2_runtime_ng__WEBPACK_IMPORTED_MODULE_12__["isInNewMode"])(this.pageStatus))
             this.spinner = false;
+        this.cliente = {
+            "objectKey": "dottore",
+            "objectTitle": "dottore",
+            "ragioneSociale": "dottore",
+            "referenteAziendale": "pippo",
+            "email": "ciao@example.com",
+            "telefono": "08113434",
+            "piva": "DFO383AFA",
+            "codiceFiscale": "PPPPPPP",
+            "sitoInternet": "www.ciao.it",
+            "fax": "08111111",
+            "organizzazionePadre": "mice",
+            "userId": "bakugo",
+            "_links": {
+                "self": [
+                    {
+                        "href": "http://localhost:8090/demo/cliente/dottore"
+                    },
+                    {
+                        "href": "http://localhost:8090/demo/cliente/dottore"
+                    }
+                ],
+                "theOrdine": {
+                    "href": "http://localhost:8090/demo/ordine/findByTheCliente/dottore"
+                },
+                "theUserEntity": {
+                    "href": "http://127.0.0.1:8090/security_model/UserEntity/bakugo"
+                }
+            }
+        };
     }
     insertCliente() {
         const cliente = this.clienteForm.value;
@@ -1249,13 +1279,47 @@ class ListClienteComponent extends _shared_base_base_component__WEBPACK_IMPORTED
     }
     paginateTable(object, criteria) {
         const options = blazing__WEBPACK_IMPORTED_MODULE_0__["PaginationUtils"].setOptionsForSpring(object, criteria);
-        this.clienteApiService.getClienteByCriteria(options).subscribe((data) => {
-            this.clienteList = Object(voila2_runtime_ng__WEBPACK_IMPORTED_MODULE_6__["extractResponse"])('cliente', data);
-            this.totalPages = Object(voila2_runtime_ng__WEBPACK_IMPORTED_MODULE_6__["extractTotalPages"])(data);
-            this.spinner = false;
-        }, () => {
-            this.spinner = false;
-        });
+        //this.clienteApiService.getClienteByCriteria(options).subscribe(
+        // (data) => {
+        this.clienteList = [
+            {
+                "objectKey": "dottore",
+                "objectTitle": "dottore",
+                "ragioneSociale": "dottore",
+                "referenteAziendale": "pippo",
+                "email": "ciao@example.com",
+                "telefono": "08113434",
+                "piva": "DFO383AFA",
+                "codiceFiscale": "PPPPPPP",
+                "sitoInternet": "www.ciao.it",
+                "fax": "08111111",
+                "organizzazionePadre": "mice",
+                "userId": "bakugo",
+                "_links": {
+                    "self": [
+                        {
+                            "href": "http://localhost:8090/demo/cliente/dottore"
+                        },
+                        {
+                            "href": "http://localhost:8090/demo/cliente/dottore"
+                        }
+                    ],
+                    "theOrdine": {
+                        "href": "http://localhost:8090/demo/ordine/findByTheCliente/dottore"
+                    },
+                    "theUserEntity": {
+                        "href": "http://127.0.0.1:8090/security_model/UserEntity/bakugo"
+                    }
+                }
+            }
+        ];
+        //this.totalPages = extractTotalPages(data);
+        this.spinner = false;
+        //},
+        /*  () => {
+           this.spinner = false;
+         }
+       ) */
     }
     searchWithCriteria() {
         this.clienteCriteria = this.searchCliente.search();

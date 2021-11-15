@@ -43,9 +43,10 @@ export class ListClienteComponent extends BaseComponent<ICliente,IClienteDto>  {
 
   
   public paginateTable(object: any, criteria?: any): void {
-    const options: HttpParams = PaginationUtils.setOptionsForSpring(object, criteria);
-    this.clienteApiService.getClienteByCriteria(options).subscribe(
+   // const options: HttpParams = PaginationUtils.setOptionsForSpring(object, criteria);
+    this.clienteApiService.getClienteByCriteria().subscribe(
       (data) => {
+        console.log("Data.... ", data)
         this.clienteList = extractResponse('cliente', data);
         this.totalPages = extractTotalPages(data);
         this.spinner = false;
@@ -57,7 +58,8 @@ export class ListClienteComponent extends BaseComponent<ICliente,IClienteDto>  {
 
   }
 
-  public searchWithCriteria() : void {	this.clienteCriteria = this.searchCliente.search();
+  public searchWithCriteria() : void {
+	this.clienteCriteria = this.searchCliente.search();
      const object: PageObject  = { page: 0, pageSize: this.pageSize};
      this.paginateTable(object, this.clienteCriteria);
   }

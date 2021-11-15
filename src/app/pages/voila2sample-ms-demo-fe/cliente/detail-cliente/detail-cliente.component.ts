@@ -39,7 +39,7 @@ const PROVIDERS = [
 export class DetailClienteComponent extends BaseComponent<ICliente, IClienteDto> implements OnInit {
 
   public clienteForm !: FormGroup;
-  public cliente !: ICliente;
+  public cliente !:any;
   public spinner: boolean = true;
 
    public privileges: string[] = getPrivileges();
@@ -68,6 +68,38 @@ export class DetailClienteComponent extends BaseComponent<ICliente, IClienteDto>
     this.setTabPageStatusOnInit();
     if(isInNewMode(this.pageStatus))
           this.spinner = false;
+
+
+    this.cliente = {
+      "objectKey":"dottore",
+      "objectTitle":"dottore",
+      "ragioneSociale":"dottore",
+      "referenteAziendale":"pippo",
+      "email":"ciao@example.com",
+      "telefono":"08113434",
+      "piva":"DFO383AFA",
+      "codiceFiscale":"PPPPPPP",
+      "sitoInternet":"www.ciao.it",
+      "fax":"08111111",
+      "organizzazionePadre":"mice",
+      "userId":"bakugo",
+      "_links":{
+         "self":[
+            {
+               "href":"http://localhost:8090/demo/cliente/dottore"
+            },
+            {
+               "href":"http://localhost:8090/demo/cliente/dottore"
+            }
+         ],
+         "theOrdine":{
+            "href":"http://localhost:8090/demo/ordine/findByTheCliente/dottore"
+         },
+         "theUserEntity":{
+            "href":"http://127.0.0.1:8090/security_model/UserEntity/bakugo"
+         }
+      }
+   }
   }
 
 

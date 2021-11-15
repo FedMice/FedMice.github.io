@@ -57,7 +57,8 @@ export class ListProdottoComponent extends BaseComponent<IProdotto,IProdottoDto>
 
   }
 
-  public searchWithCriteria() : void {	this.prodottoCriteria = this.searchProdotto.search();
+  public searchWithCriteria() : void {
+	this.prodottoCriteria = this.searchProdotto.search();
      const object: PageObject  = { page: 0, pageSize: this.pageSize};
      this.paginateTable(object, this.prodottoCriteria);
   }

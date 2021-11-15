@@ -1058,9 +1058,28 @@ class ListOrdineComponent extends _shared_base_base_component__WEBPACK_IMPORTED_
         return Object(voila2_runtime_ng__WEBPACK_IMPORTED_MODULE_6__["getPrivilegesEnum"])();
     }
     paginateTable(object, criteria) {
-        const options = blazing__WEBPACK_IMPORTED_MODULE_0__["PaginationUtils"].setOptionsForSpring(object, criteria);
-        this.ordineApiService.getOrdineByCriteria(options).subscribe((data) => {
-            this.ordineList = Object(voila2_runtime_ng__WEBPACK_IMPORTED_MODULE_6__["extractResponse"])('ordine', data);
+        this.ordineApiService.getOrdineByCriteria().subscribe((data) => {
+            this.ordineList = [
+                {
+                    "objectKey": "1~2020",
+                    "objectTitle": "1~2020",
+                    idOrdine: 1,
+                    "anno": 2020,
+                    "urgente": true,
+                    "ragioneSociale": "dottore",
+                    "idTipoOrdine": null,
+                    "theClienteObjectTitle": "dottore",
+                    "theClienteObjectKey": "dottore",
+                    "theTipoOrdineObjectTitle": "",
+                    "theTipoOrdineObjectKey": "",
+                    "theOrdinePadreObjectTitle": "",
+                    "theOrdinePadreObjectKey": "",
+                    "ordineKey": {
+                        "idOrdine": 1,
+                        "anno": 2020,
+                    },
+                }
+            ];
             this.totalPages = Object(voila2_runtime_ng__WEBPACK_IMPORTED_MODULE_6__["extractTotalPages"])(data);
             this.spinner = false;
         }, () => {

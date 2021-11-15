@@ -19,8 +19,8 @@ export class OrdineApiService extends BaseApiService<IOrdine, IOrdineDto>{
 
   constructor(httpClient: HttpClient, dateService: DateService, private ordineMock: OrdineMockService) { super(httpClient, dateService) }
 
-  public getOrdineByCriteria(options?: HttpParams): Observable<ApiListResponse<IOrdine,IOrdineDto>> {
-    return this.getEntityListByCriteria(this.url, options);
+  public getOrdineByCriteria(options?: HttpParams): Observable<any> {
+    return this.ordineMock.getOrdineList();
   }
 
   public addOrdine(ordine: IOrdine) : Observable<ApiResponse<IOrdine>> {

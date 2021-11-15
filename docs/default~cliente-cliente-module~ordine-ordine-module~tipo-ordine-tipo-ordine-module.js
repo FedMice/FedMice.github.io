@@ -445,121 +445,6 @@ DialogListTipoOrdineComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_5__
 
 /***/ }),
 
-/***/ "adCn":
-/*!************************************************!*\
-  !*** ./src/moc/ordine/cliente-mock.service.ts ***!
-  \************************************************/
-/*! exports provided: ClienteMockService, CLIENTI, CLIENTE */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClienteMockService", function() { return ClienteMockService; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLIENTI", function() { return CLIENTI; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLIENTE", function() { return CLIENTE; });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "qCKp");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-class ClienteMockService {
-    getClienteList() {
-        return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["of"])(CLIENTI);
-    }
-    getCliente() {
-        return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["of"])(CLIENTE);
-    }
-}
-ClienteMockService.ɵfac = function ClienteMockService_Factory(t) { return new (t || ClienteMockService)(); };
-ClienteMockService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: ClienteMockService, factory: ClienteMockService.ɵfac, providedIn: "root" });
-const CLIENTI = {
-    "messages": [],
-    "response": {
-        "_embedded": {
-            "clienteDtoList": [
-                {
-                    "objectKey": "dottore",
-                    "objectTitle": "dottore",
-                    "ragioneSociale": "dottore",
-                    "referenteAziendale": "pippo",
-                    "email": "ciao@example.com",
-                    "telefono": "08113434",
-                    "piva": "DFO383AFA",
-                    "codiceFiscale": "PPPPPPP",
-                    "sitoInternet": "www.ciao.it",
-                    "fax": "08111111",
-                    "organizzazionePadre": "mice",
-                    "userId": "bakugo",
-                    "_links": {
-                        "self": [
-                            {
-                                "href": "http://localhost:8090/demo/cliente/dottore"
-                            },
-                            {
-                                "href": "http://localhost:8090/demo/cliente/dottore"
-                            }
-                        ],
-                        "theOrdine": {
-                            "href": "http://localhost:8090/demo/ordine/findByTheCliente/dottore"
-                        },
-                        "theUserEntity": {
-                            "href": "http://127.0.0.1:8090/security_model/UserEntity/bakugo"
-                        }
-                    }
-                }
-            ]
-        },
-        "_links": {
-            "self": {
-                "href": "http://127.0.0.1:8014/demo/cliente?page=0&size=5"
-            }
-        },
-        "page": {
-            "size": 5,
-            "totalElements": 1,
-            "totalPages": 1,
-            "number": 0
-        }
-    },
-    "errorDetails": null
-};
-const CLIENTE = {
-    "messages": [],
-    "response": {
-        "objectKey": "dottore",
-        "objectTitle": "dottore",
-        "ragioneSociale": "dottore",
-        "referenteAziendale": "pippo",
-        "email": "ciao@example.com",
-        "telefono": "08113434",
-        "piva": "DFO383AFA",
-        "codiceFiscale": "PPPPPPP",
-        "sitoInternet": "www.ciao.it",
-        "fax": "08111111",
-        "organizzazionePadre": "mice",
-        "userId": "bakugo",
-        "_links": {
-            "self": [
-                {
-                    "href": "http://localhost:8090/demo/cliente/dottore"
-                },
-                {
-                    "href": "http://localhost:8090/demo/cliente/dottore"
-                }
-            ],
-            "theOrdine": {
-                "href": "http://localhost:8090/demo/ordine/findByTheCliente/dottore"
-            },
-            "theUserEntity": {
-                "href": "http://127.0.0.1:8090/security_model/UserEntity/bakugo"
-            }
-        }
-    },
-    "errorDetails": null
-};
-
-
-/***/ }),
-
 /***/ "eUbe":
 /*!******************************************************************************!*\
   !*** ./src/app/pages/voila2sample-ms-demo-fe/cliente/cliente-api.service.ts ***!
@@ -574,10 +459,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var blazing__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! blazing */ "pYbk");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 /* harmony import */ var _shared_base_base_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../shared/base/base-api.service */ "GXZf");
-/* harmony import */ var src_moc_ordine_cliente_mock_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/moc/ordine/cliente-mock.service */ "adCn");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
 
@@ -586,13 +468,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class ClienteApiService extends _shared_base_base_api_service__WEBPACK_IMPORTED_MODULE_3__["BaseApiService"] {
-    constructor(httpClient, dateService, clienteMock) {
+    constructor(httpClient, dateService) {
         super(httpClient, dateService);
-        this.clienteMock = clienteMock;
         this.url = "demo/cliente";
     }
     getClienteByCriteria(options) {
-        return this.clienteMock.getClienteList();
+        return this.getEntityListByCriteria(this.url, options);
     }
     addCliente(cliente) {
         const fixedCliente = this.stringifyDate(cliente, 'dataCliente');
@@ -615,8 +496,8 @@ class ClienteApiService extends _shared_base_base_api_service__WEBPACK_IMPORTED_
         window.open(this.baseUrl + "/" + this.url + '/pdf/' + id);
     }
 }
-ClienteApiService.ɵfac = function ClienteApiService_Factory(t) { return new (t || ClienteApiService)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](blazing__WEBPACK_IMPORTED_MODULE_1__["DateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](src_moc_ordine_cliente_mock_service__WEBPACK_IMPORTED_MODULE_4__["ClienteMockService"])); };
-ClienteApiService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjectable"]({ token: ClienteApiService, factory: ClienteApiService.ɵfac });
+ClienteApiService.ɵfac = function ClienteApiService_Factory(t) { return new (t || ClienteApiService)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](blazing__WEBPACK_IMPORTED_MODULE_1__["DateService"])); };
+ClienteApiService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({ token: ClienteApiService, factory: ClienteApiService.ɵfac });
 
 
 /***/ }),

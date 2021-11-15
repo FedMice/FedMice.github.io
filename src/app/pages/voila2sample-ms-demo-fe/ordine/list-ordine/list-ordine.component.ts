@@ -19,7 +19,7 @@ import { extractResponse, extractTotalPages, navigateToPath, getPrivilegesEnum, 
 export class ListOrdineComponent extends BaseComponent<IOrdine,IOrdineDto>  {
 
 
-  public ordineList: IOrdine [] =  [];
+  public ordineList: any [] =  [];
   public ordine!: IOrdine;
   public totalPages: number = 0;
   public spinner: boolean = true;
@@ -43,10 +43,30 @@ export class ListOrdineComponent extends BaseComponent<IOrdine,IOrdineDto>  {
 
   
   public paginateTable(object: any, criteria?: any): void {
-    const options: HttpParams = PaginationUtils.setOptionsForSpring(object, criteria);
-    this.ordineApiService.getOrdineByCriteria(options).subscribe(
+    this.ordineApiService.getOrdineByCriteria().subscribe(
       (data) => {
-        this.ordineList = extractResponse('ordine', data);
+        this.ordineList = [
+          {
+            "objectKey":"1~2020",
+            "objectTitle":"1~2020",
+              idOrdine:1,
+            "anno":2020,
+            "urgente":true,
+            "ragioneSociale":"dottore",
+            "idTipoOrdine":null,
+            "theClienteObjectTitle":"dottore",
+            "theClienteObjectKey":"dottore",
+            "theTipoOrdineObjectTitle": "",
+            "theTipoOrdineObjectKey":"",
+            "theOrdinePadreObjectTitle":"",
+            "theOrdinePadreObjectKey":"",
+            "ordineKey":{
+               "idOrdine":1,
+               "anno":2020,
+            },
+           
+         }
+        ]
         this.totalPages = extractTotalPages(data);
         this.spinner = false;
       },
@@ -57,7 +77,8 @@ export class ListOrdineComponent extends BaseComponent<IOrdine,IOrdineDto>  {
 
   }
 
-  public searchWithCriteria() : void {	this.ordineCriteria = this.searchOrdine.search();
+  public searchWithCriteria() : void {
+	this.ordineCriteria = this.searchOrdine.search();
      const object: PageObject  = { page: 0, pageSize: this.pageSize};
      this.paginateTable(object, this.ordineCriteria);
   }
