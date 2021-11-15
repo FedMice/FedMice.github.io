@@ -1,6 +1,10 @@
-# SampleProject
+# Voila2 fe
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
+
+## Install project
+
+To install the project, have to remove the file `package-lock.json` in voila2poc-fe and digit the command npm install in console.
 
 ## Development server
 

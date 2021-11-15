@@ -1,29 +1,23 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { Routes, RouterModule } from '@angular/router';
+import { HomepageComponent } from './homepage/homepage.component';
 import { PagesComponent } from './pages.component';
+
 
 const routes: Routes = [
   {
     path: '', component: PagesComponent,
     children: [
       {
-        path: 'home', component: HomeComponent
+        path:'home', component: HomepageComponent
       },
-      {
-        path:'not-found', component: NotFoundComponent
-      },
-      {
-        path: "overlays", loadChildren: () =>
-          import("./overlays/overlays.module").then((m) => m.OverlaysModule),
-      },
-      {
-        path: "forms", loadChildren: () =>
-          import("./forms/forms.module").then((m) => m.FormssModule),
+	   {
+        path: "ms-demo", loadChildren: () =>
+          import("./voila2sample-ms-demo-fe/ms-demo.module").then((m) => m.MsDemoModule),
       }
     ]
   }
+ 
 ];
 
 @NgModule({
