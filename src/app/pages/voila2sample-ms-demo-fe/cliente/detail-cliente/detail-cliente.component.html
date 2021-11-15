@@ -1,0 +1,206 @@
+<form [formGroup]="clienteForm">
+    <bz-card>
+        <bz-card-header> 
+			{{ 'header.detail' | translate }} Cliente
+ 			<i bzTooltip="Cliente" class="fa fa-question-circle"></i>
+		</bz-card-header>
+
+		<bz-card-content>
+
+	        <ng-container *ngIf="pageStatus | hasPageStatus: ['new','edit']">
+
+           
+                       <!-- Ragione Sociale-->
+                       	            <div class="fk-row inputs">
+                       	                <div class="fk-col-8">
+                       						
+                       						<bz-input label="Ragione Sociale:" formControlName="ragioneSociale" type="string"  [disableAttr]="pageStatus | hasPageStatus: 'edit'">
+                       	                        <bz-error> L'Ragione Sociale   {{ 'label.obligatoryValues' | translate }}  </bz-error>
+                       	                    </bz-input>
+                       	
+                       	                </div>
+                       	            </div>
+                       
+                       <!-- Referente Aziendale-->
+                       	            <div class="fk-row inputs">
+                       	                <div class="fk-col-8">
+                       						
+                       						<bz-input label="Referente Aziendale:" formControlName="referenteAziendale" type="string" >
+                       	                        <bz-error> L'Referente Aziendale   {{ 'label.obligatoryValues' | translate }}  </bz-error>
+                       	                    </bz-input>
+                       	
+                       	                </div>
+                       	            </div>
+                       
+                       <!-- Email-->
+                       	            <div class="fk-row inputs">
+                       	                <div class="fk-col-8">
+                       						
+                       						<bz-input label="Email:" formControlName="email" type="string" >
+                       	                        <bz-error> L'Email   {{ 'label.obligatoryValues' | translate }}  </bz-error>
+                       	                    </bz-input>
+                       	
+                       	                </div>
+                       	            </div>
+                       
+                       <!-- Telefono-->
+                       	            <div class="fk-row inputs">
+                       	                <div class="fk-col-8">
+                       						
+                       						<bz-input label="Telefono:" formControlName="telefono" type="string" >
+                       	                        <bz-error> L'Telefono   {{ 'label.obligatoryValues' | translate }}  </bz-error>
+                       	                    </bz-input>
+                       	
+                       	                </div>
+                       	            </div>
+                       
+                       <!-- Piva-->
+                       	            <div class="fk-row inputs">
+                       	                <div class="fk-col-8">
+                       						
+                       						<bz-input label="Piva:" formControlName="piva" type="string" >
+                       	                        <bz-error> L'Piva   {{ 'label.obligatoryValues' | translate }}  </bz-error>
+                       	                    </bz-input>
+                       	
+                       	                </div>
+                       	            </div>
+                       
+                       <!-- Codice Fiscale-->
+                       	            <div class="fk-row inputs">
+                       	                <div class="fk-col-8">
+                       						
+                       						<bz-input label="Codice Fiscale:" formControlName="codiceFiscale" type="string" >
+                       	                        <bz-error> L'Codice Fiscale   {{ 'label.obligatoryValues' | translate }}  </bz-error>
+                       	                    </bz-input>
+                       	
+                       	                </div>
+                       	            </div>
+                       
+                       <!-- Sito Internet-->
+                       	            <div class="fk-row inputs">
+                       	                <div class="fk-col-8">
+                       						
+                       						<bz-input label="Sito Internet:" formControlName="sitoInternet" type="string" >
+                       	                        <bz-error> L'Sito Internet   {{ 'label.obligatoryValues' | translate }}  </bz-error>
+                       	                    </bz-input>
+                       	
+                       	                </div>
+                       	            </div>
+                       
+                       <!-- Fax-->
+                       	            <div class="fk-row inputs">
+                       	                <div class="fk-col-8">
+                       						
+                       						<bz-input label="Fax:" formControlName="fax" type="string" >
+                       	                        <bz-error> L'Fax   {{ 'label.obligatoryValues' | translate }}  </bz-error>
+                       	                    </bz-input>
+                       	
+                       	                </div>
+                       	            </div>
+                       
+                       <!-- Organizzazione Padre-->
+                       	            <div class="fk-row inputs">
+                       	                <div class="fk-col-8">
+                       						
+                       						<bz-input label="Organizzazione Padre:" formControlName="organizzazionePadre" type="string" >
+                       	                        <bz-error> L'Organizzazione Padre   {{ 'label.obligatoryValues' | translate }}  </bz-error>
+                       	                    </bz-input>
+                       	
+                       	                </div>
+                       	            </div>
+          
+        
+	        </ng-container>
+	
+	        <div *ngIf="pageStatus | hasPageStatus: 'view'">
+	
+				<!-- Ragione Sociale -->
+				  <label  > Ragione Sociale: </label>
+	            <div class="fk-row inputs">
+	                <div class="fk-col-8"><strong>{{ cliente?.ragioneSociale  }}</strong></div>
+	            </div>
+				
+				<!-- Referente Aziendale -->
+				  <label  > Referente Aziendale: </label>
+	            <div class="fk-row inputs">
+	                <div class="fk-col-8"><strong>{{ cliente?.referenteAziendale  }}</strong></div>
+	            </div>
+				
+				<!-- Email -->
+				  <label  > Email: </label>
+	            <div class="fk-row inputs">
+	                <div class="fk-col-8"><strong>{{ cliente?.email  }}</strong></div>
+	            </div>
+				
+				<!-- Telefono -->
+				  <label  > Telefono: </label>
+	            <div class="fk-row inputs">
+	                <div class="fk-col-8"><strong>{{ cliente?.telefono  }}</strong></div>
+	            </div>
+				
+				<!-- Piva -->
+				  <label  > Piva: </label>
+	            <div class="fk-row inputs">
+	                <div class="fk-col-8"><strong>{{ cliente?.piva  }}</strong></div>
+	            </div>
+				
+				<!-- Codice Fiscale -->
+				  <label  > Codice Fiscale: </label>
+	            <div class="fk-row inputs">
+	                <div class="fk-col-8"><strong>{{ cliente?.codiceFiscale  }}</strong></div>
+	            </div>
+				
+				<!-- Sito Internet -->
+				  <label  > Sito Internet: </label>
+	            <div class="fk-row inputs">
+	                <div class="fk-col-8"><strong>{{ cliente?.sitoInternet  }}</strong></div>
+	            </div>
+				
+				<!-- Fax -->
+				  <label  > Fax: </label>
+	            <div class="fk-row inputs">
+	                <div class="fk-col-8"><strong>{{ cliente?.fax  }}</strong></div>
+	            </div>
+				
+				<!-- Organizzazione Padre -->
+				  <label  > Organizzazione Padre: </label>
+	            <div class="fk-row inputs">
+	                <div class="fk-col-8"><strong>{{ cliente?.organizzazionePadre  }}</strong></div>
+	            </div>
+				
+	
+                <!--User Entity-->
+				 <label> User Entity: </label>
+				<div class="fk-row inputs">
+                        <div class="fk-col-8"><strong>{{ cliente?.theUserEntityObjectTitle}}</strong></div>
+	            </div>
+             </div>
+	
+	        
+	        <!--Tabs cliente -->
+	        <app-tabs-cliente [formGroup]="clienteForm" [entity]="cliente" [pageStatus]="tabPageStatus"></app-tabs-cliente>
+
+		</bz-card-content>
+
+    </bz-card>
+
+    <!-- Buttons -->
+    <bz-card class="card">
+		<bz-card-content>	
+	        <button bzButton status="primary" type="button" (click)="buttonsService.goBack()"> {{ 'buttons.goBack' | translate }} </button>
+	        <button *ngIf="(pageStatus | hasPageStatus: 'new') && (Privileges?.CLIENTE_CREATE | hasPermission: privileges)" bzButton status="primary" class="button"
+	            (bzClick)="insertCliente()" [bzCheckForm]="clienteForm"> {{ 'buttons.save' | translate }}  </button>
+	        <button *ngIf="(pageStatus | hasPageStatus: 'view') && (Privileges?.CLIENTE_FIND_BY_ID | hasPermission: privileges)" bzButton status="primary" class="button"
+	            (bzClick)="editCliente()" type="button"> {{ 'buttons.edit' | translate }}  </button>
+	        <button *ngIf="(pageStatus | hasPageStatus: 'edit') && (Privileges?.CLIENTE_UPDATE | hasPermission: privileges)" bzButton status="primary" class="button"
+	            (bzClick)="updateCliente()" [bzCheckForm]="clienteForm"> {{ 'buttons.save' | translate }}  </button>
+	        <button *ngIf="(pageStatus | hasPageStatus: ['edit','view']) && (Privileges?.CLIENTE_DELETE | hasPermission: privileges)" bzButton status="primary" class="button"
+	            (bzClick)="confirmDeleteCliente()" > {{ 'buttons.delete' | translate }}  </button>
+			
+		</bz-card-content>	
+    </bz-card>
+
+</form>
+
+
+

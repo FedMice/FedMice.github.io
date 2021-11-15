@@ -1,0 +1,95 @@
+
+
+<bz-card [bzSpinner]="spinner" *ngIf="!(pageStatus | hasPageStatus: ['new','edit']) || readonly">
+    <!-- card header -->
+    <bz-card-header>
+         {{ 'header.list' | translate }}  Riga Ordine
+    </bz-card-header>
+
+	<bz-card-content>
+
+	    <!--  {{ 'header.detail' | translate }}  Riga Ordine -->
+	    <bz-table [sources]="rigaOrdineList" [pageSize]="pageSize" [nVisiblePages]="3" [totalPages]="totalPages"
+	    (pageObject)="paginateTable($event)" paginatedBe>
+	       
+	
+	
+	         <!-- Ordine -->
+	        <th bzHeaderColumn bzSortColumn="theOrdineObjectKey" scope="col"> Ordine </th>
+                 <td *bzColumnDef="let element"> {{element.rigaOrdineKey.theOrdineObjectKey}}</td>
+		
+		
+	
+	        <!-- Quantita -->
+	        <th bzHeaderColumn bzSortColumn="quantita" scope="col"> Quantita </th>
+	        <td *bzColumnDef="let element"> {{element.quantita}}</td>
+	
+
+	        <ng-container bzTableNoValue>  {{ 'label.noElement' | translate }}  Riga Ordine </ng-container>
+	
+	    </bz-table>
+
+	</bz-card-content>
+
+</bz-card>
+
+
+
+<!-- Add Riga Ordine -->
+<bz-card *ngIf="(pageStatus | hasPageStatus: ['new','edit']) && !readonly">
+
+    <bz-card-header>
+         {{ 'header.list' | translate }}  Riga Ordine
+    </bz-card-header>
+
+		<bz-card-content>
+   
+		 <bz-table  [bzSmartTable]="rigaOrdineList"  [bzFormGroup]="smartFormGroup"  [bzDisabledControls]="['theOrdineObjectKey']"   [bzDisabledControls]="['theProdottoObjectKey']"  
+		 [bzForm]= "form"  (smartArray)="getSmartArray($event)" withIndex paginated>
+		        
+		        <!-- Ordine -->
+		        <th bzHeaderColumn class="prodotto-column-width" scope="col"> Ordine </th>
+		        <td *bzColumnDef="let element" [formGroup]="element.value">
+                    <div formGroupName="rigaOrdineKey"> 
+		          <bz-input formControlName="theOrdineObjectKey">
+						<button bzInputButton status="primary" (click)="showOrdineListDialog(element.rowIndex)">
+      						<bz-icon iconName="fa fa-window-maximize"></bz-icon>
+ 					    </button>			
+				  </bz-input>
+                    </div>
+		       
+		        </td>
+		
+		
+		        <!-- Quantita -->
+		        <th bzHeaderColumn scope="col"> Quantita </th>
+		        <td *bzColumnDef="let element" [formGroup]="element?.value">
+		            <bz-input formControlName="quantita"></bz-input>
+		        </td>
+		
+		        <!-- Remove Riga Ordine -->
+		        <th bzHeaderColumn scope="col"> </th>
+		        <td *bzColumnDef="let element" >
+		            <button  bzButton [bzRemoveRow]="element" status="danger"  >
+		                {{ 'buttons.delete' | translate }} 
+		            </button>
+		            <button  bzButton [bzRestoreRow]="element" status="primary"  >
+		               {{ 'buttons.restore' | translate }} 
+		            </button>
+		        </td>
+		
+		    
+		        <ng-container >  {{ 'label.noElement' | translate }} Riga Ordine </ng-container>
+		
+		        <button bzButton bzAddRow >{{ 'buttons.new' | translate }}  Riga Ordine </button>
+		
+		    </bz-table>
+
+	</bz-card-content>			
+   	
+</bz-card>
+
+
+
+
+

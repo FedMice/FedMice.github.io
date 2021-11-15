@@ -1,0 +1,70 @@
+
+<bz-card [bzSpinner]="spinner" [size]="cardSize" global>
+
+   <!-- {{ 'header.list' | translate }} cliente -->
+    <bz-card-header>
+         cliente {{ 'header.list' | translate }}
+    </bz-card-header>
+
+	<bz-card-content>
+
+	    <bz-table [sources]="clienteList" [pageSize]="pageSize" [nVisiblePages]="3" [totalPages]="totalPages"
+	        (pageObject)="paginateTable($event, null)" paginatedBe>
+	
+	        <!-- ragioneSociale -->
+	        <th bzHeaderColumn bzSortColumn="ragioneSociale"> ragioneSociale </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.ragioneSociale}} 
+	        </td>
+	        <!-- referenteAziendale -->
+	        <th bzHeaderColumn bzSortColumn="referenteAziendale"> referenteAziendale </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.referenteAziendale}} 
+	        </td>
+	        <!-- email -->
+	        <th bzHeaderColumn bzSortColumn="email"> email </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.email}} 
+	        </td>
+	        <!-- telefono -->
+	        <th bzHeaderColumn bzSortColumn="telefono"> telefono </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.telefono}} 
+	        </td>
+	        <!-- piva -->
+	        <th bzHeaderColumn bzSortColumn="piva"> piva </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.piva}} 
+	        </td>
+	        <!-- codiceFiscale -->
+	        <th bzHeaderColumn bzSortColumn="codiceFiscale"> codiceFiscale </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.codiceFiscale}} 
+	        </td>
+	        <!-- sitoInternet -->
+	        <th bzHeaderColumn bzSortColumn="sitoInternet"> sitoInternet </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.sitoInternet}} 
+	        </td>
+	        <!-- fax -->
+	        <th bzHeaderColumn bzSortColumn="fax"> fax </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.fax}} 
+	        </td>
+	        <!-- organizzazionePadre -->
+	        <th bzHeaderColumn bzSortColumn="organizzazionePadre"> organizzazionePadre </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.organizzazionePadre}} 
+	        </td>
+	        <ng-container bzTableNoValue> {{ 'label.noElements' | translate }} Cliente </ng-container>
+	    </bz-table>
+
+	</bz-card-content>
+
+</bz-card>
+
+
+
+
+
+

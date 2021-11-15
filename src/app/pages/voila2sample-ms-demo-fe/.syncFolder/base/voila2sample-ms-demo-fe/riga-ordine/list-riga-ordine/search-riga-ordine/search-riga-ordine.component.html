@@ -1,0 +1,47 @@
+
+	<bz-card class="card" isCollapsable>
+    <!-- card header -->
+    <bz-card-header>
+        {{ 'header.search' | translate }}
+    </bz-card-header>
+
+	<bz-card-content>
+
+	    <form [formGroup]="searchRigaOrdineForm">
+		
+	
+	        <!-- Quantita -->
+	        <div class="fk-row inputs">
+	            <div class="fk-col-8">
+					<bz-input label="Quantita da" placeholder="da" formControlName="quantitaFrom" (keyup.enter)="search()"></bz-input>
+	            </div>
+	            <div class="fk-col-8">
+	                <bz-input label="Quantita a" placeholder="a" formControlName="quantitaTo" (keyup.enter)="search()"></bz-input>
+	            </div>
+	        </div>
+	
+	
+			<div class="fk-row inputs">
+	            <div class="fk-col-8">
+				  <bz-dropdown label="Ordine" [options]="ordineList" optionLabel="objectTitle" optionValue="objectKey" formControlName="theOrdineObjectKey">
+                    <bz-error></bz-error>
+                  </bz-dropdown>
+				</div>
+	        </div>
+
+
+			<div class="fk-row inputs">
+	            <div class="fk-col-8">
+				  <bz-dropdown label="Prodotto" [options]="prodottoList" optionLabel="objectTitle" optionValue="objectKey" formControlName="theProdottoObjectKey">
+                    <bz-error></bz-error>
+                  </bz-dropdown>
+				</div>
+	        </div>
+
+
+		 
+	    </form>
+	</bz-card-content>
+</bz-card>
+
+

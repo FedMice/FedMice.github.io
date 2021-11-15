@@ -1,0 +1,72 @@
+<form [formGroup]="tipoOrdineForm">
+    <bz-card>
+        <bz-card-header> 
+			{{ 'header.detail' | translate }} Tipo Ordine
+ 			<i bzTooltip="Tipologica degli ordini emessi" class="fa fa-question-circle"></i>
+		</bz-card-header>
+
+		<bz-card-content>
+
+	        <ng-container *ngIf="pageStatus | hasPageStatus: ['new','edit']">
+
+           
+                       
+                       <!-- Nome Tipo Ordine-->
+                       	            <div class="fk-row inputs">
+                       	                <div class="fk-col-8">
+                       						
+                       						<bz-input label="Nome Tipo Ordine:" formControlName="nomeTipoOrdine" type="string" >
+                       	                        <bz-error> L'Nome Tipo Ordine   {{ 'label.obligatoryValues' | translate }}  </bz-error>
+                       	                    </bz-input>
+                       	
+                       	                </div>
+                       	            </div>
+                       
+        
+	        </ng-container>
+	
+	        <div *ngIf="pageStatus | hasPageStatus: 'view'">
+	
+				<!-- Id Tipo Ordine -->
+				  <label 	bzTooltip="Identificativo"  > Id Tipo Ordine: </label>
+	            <div class="fk-row inputs">
+	                <div class="fk-col-8"><strong>{{ tipoOrdine?.idTipoOrdine  }}</strong></div>
+	            </div>
+				
+				<!-- Nome Tipo Ordine -->
+				  <label 	bzTooltip="Nome tipo Ordine"  > Nome Tipo Ordine: </label>
+	            <div class="fk-row inputs">
+	                <div class="fk-col-8"><strong>{{ tipoOrdine?.nomeTipoOrdine  }}</strong></div>
+	            </div>
+				
+	
+             </div>
+	
+	        
+	        <!--Tabs tipo-ordine -->
+	        <app-tabs-tipo-ordine [formGroup]="tipoOrdineForm" [entity]="tipoOrdine" [pageStatus]="tabPageStatus"></app-tabs-tipo-ordine>
+
+		</bz-card-content>
+
+    </bz-card>
+
+    <!-- Buttons -->
+    <bz-card class="card">
+		<bz-card-content>	
+	        <button bzButton status="primary" type="button" (click)="buttonsService.goBack()"> {{ 'buttons.goBack' | translate }} </button>
+	        <button *ngIf="(pageStatus | hasPageStatus: 'new') && (Privileges?.TIPO_ORDINE_CREATE | hasPermission: privileges)" bzButton status="primary" class="button"
+	            (bzClick)="insertTipoOrdine()" [bzCheckForm]="tipoOrdineForm"> {{ 'buttons.save' | translate }}  </button>
+	        <button *ngIf="(pageStatus | hasPageStatus: 'view') && (Privileges?.TIPO_ORDINE_FIND_BY_ID | hasPermission: privileges)" bzButton status="primary" class="button"
+	            (bzClick)="editTipoOrdine()" type="button"> {{ 'buttons.edit' | translate }}  </button>
+	        <button *ngIf="(pageStatus | hasPageStatus: 'edit') && (Privileges?.TIPO_ORDINE_UPDATE | hasPermission: privileges)" bzButton status="primary" class="button"
+	            (bzClick)="updateTipoOrdine()" [bzCheckForm]="tipoOrdineForm"> {{ 'buttons.save' | translate }}  </button>
+	        <button *ngIf="(pageStatus | hasPageStatus: ['edit','view']) && (Privileges?.TIPO_ORDINE_DELETE | hasPermission: privileges)" bzButton status="primary" class="button"
+	            (bzClick)="confirmDeleteTipoOrdine()" > {{ 'buttons.delete' | translate }}  </button>
+			
+		</bz-card-content>	
+    </bz-card>
+
+</form>
+
+
+

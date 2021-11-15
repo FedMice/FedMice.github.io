@@ -1,0 +1,70 @@
+
+<bz-card [bzSpinner]="spinner" [size]="cardSize" global>
+
+   <!-- {{ 'header.list' | translate }} prodotto -->
+    <bz-card-header>
+         prodotto {{ 'header.list' | translate }}
+    </bz-card-header>
+
+	<bz-card-content>
+
+	    <bz-table [sources]="prodottoList" [pageSize]="pageSize" [nVisiblePages]="3" [totalPages]="totalPages"
+	        (pageObject)="paginateTable($event, null)" paginatedBe>
+	
+	        <!-- idProdotto -->
+	        <th bzHeaderColumn bzSortColumn="idProdotto"> idProdotto </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.idProdotto}} 
+	        </td>
+	        <!-- descrizioneProdotto -->
+	        <th bzHeaderColumn bzSortColumn="descrizioneProdotto"> descrizioneProdotto </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.descrizioneProdotto}} 
+	        </td>
+	        <!-- prezzoUnitario -->
+	        <th bzHeaderColumn bzSortColumn="prezzoUnitario"> prezzoUnitario </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.prezzoUnitario}} 
+	        </td>
+	        <!-- dataScadenza -->
+	        <th bzHeaderColumn bzSortColumn="dataScadenza"> dataScadenza </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.dataScadenza}} 
+	        </td>
+	        <!-- limitedEdition -->
+	        <th bzHeaderColumn bzSortColumn="limitedEdition"> limitedEdition </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.limitedEdition}} 
+	        </td>
+	        <!-- createdBy -->
+	        <th bzHeaderColumn bzSortColumn="createdBy"> createdBy </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.createdBy}} 
+	        </td>
+	        <!-- lastModifiedBy -->
+	        <th bzHeaderColumn bzSortColumn="lastModifiedBy"> lastModifiedBy </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.lastModifiedBy}} 
+	        </td>
+	        <!-- createdDate -->
+	        <th bzHeaderColumn bzSortColumn="createdDate"> createdDate </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.createdDate}} 
+	        </td>
+	        <!-- lastModifiedDate -->
+	        <th bzHeaderColumn bzSortColumn="lastModifiedDate"> lastModifiedDate </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.lastModifiedDate}} 
+	        </td>
+	        <ng-container bzTableNoValue> {{ 'label.noElements' | translate }} Prodotto </ng-container>
+	    </bz-table>
+
+	</bz-card-content>
+
+</bz-card>
+
+
+
+
+
+

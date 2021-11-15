@@ -1,0 +1,94 @@
+<form [formGroup]="rigaOrdineForm">
+    <bz-card>
+        <bz-card-header> 
+			{{ 'header.detail' | translate }} Riga Ordine
+ 			<i bzTooltip="Riga Ordine" class="fa fa-question-circle"></i>
+		</bz-card-header>
+
+		<bz-card-content>
+
+	        <ng-container *ngIf="pageStatus | hasPageStatus: ['new','edit']">
+
+           
+            <div formGroupName="rigaOrdineKey">
+
+	
+	
+	               <!-- Ordine   -->
+	               	          <div class="fk-row inputs">
+	               	               <div class="fk-col-8">
+	               	                       <bz-dropdown label="Ordine" [options]="ordineList" optionLabel="objectTitle" optionValue="objectKey" formControlName="theOrdineObjectKey">
+	               	                       <bz-error></bz-error>
+	               	                       </bz-dropdown>
+	               	                </div>
+	               	           </div> 
+	               <!-- Prodotto   -->
+	               	          <div class="fk-row inputs">
+	               	               <div class="fk-col-8">
+	               	                       <bz-dropdown label="Prodotto" [options]="prodottoList" optionLabel="objectTitle" optionValue="objectKey" formControlName="theProdottoObjectKey">
+	               	                       <bz-error></bz-error>
+	               	                       </bz-dropdown>
+	               	                </div>
+	               	           </div> 
+            </div> <!-- end formGroup -->
+                       <!-- Quantita-->
+                       	            <div class="fk-row inputs">
+                       	                <div class="fk-col-8">
+                       						 <bz-input label="Quantita:" formControlName="quantita" type="number">
+                       	                        <bz-error> Quantita  {{ 'label.obligatoryValues' | translate }} </bz-error>
+                       	                    </bz-input>
+                       						
+                       	
+                       	                </div>
+                       	            </div>
+                       
+        
+	        </ng-container>
+	
+	        <div *ngIf="pageStatus | hasPageStatus: 'view'">
+	
+				<!-- Quantita -->
+				  <label  > Quantita: </label>
+	            <div class="fk-row inputs">
+	                <div class="fk-col-8"><strong>{{ rigaOrdine?.quantita  }}</strong></div>
+	            </div>
+				
+	
+                <!--Ordine-->
+				 <label> Ordine: </label>
+				<div class="fk-row inputs">
+	                <div class="fk-col-8"><strong>{{ rigaOrdine?.rigaOrdineKey?.theOrdineObjectTitle}}</strong></div>
+	            </div>
+                <!--Prodotto-->
+				 <label> Prodotto: </label>
+				<div class="fk-row inputs">
+	                <div class="fk-col-8"><strong>{{ rigaOrdine?.rigaOrdineKey?.theProdottoObjectTitle}}</strong></div>
+	            </div>
+             </div>
+	
+	        
+
+		</bz-card-content>
+
+    </bz-card>
+
+    <!-- Buttons -->
+    <bz-card class="card">
+		<bz-card-content>	
+	        <button bzButton status="primary" type="button" (click)="buttonsService.goBack()"> {{ 'buttons.goBack' | translate }} </button>
+	        <button *ngIf="(pageStatus | hasPageStatus: 'new') && (Privileges?.RIGA_ORDINE_CREATE | hasPermission: privileges)" bzButton status="primary" class="button"
+	            (bzClick)="insertRigaOrdine()" [bzCheckForm]="rigaOrdineForm"> {{ 'buttons.save' | translate }}  </button>
+	        <button *ngIf="(pageStatus | hasPageStatus: 'view') && (Privileges?.RIGA_ORDINE_FIND_BY_ID | hasPermission: privileges)" bzButton status="primary" class="button"
+	            (bzClick)="editRigaOrdine()" type="button"> {{ 'buttons.edit' | translate }}  </button>
+	        <button *ngIf="(pageStatus | hasPageStatus: 'edit') && (Privileges?.RIGA_ORDINE_UPDATE | hasPermission: privileges)" bzButton status="primary" class="button"
+	            (bzClick)="updateRigaOrdine()" [bzCheckForm]="rigaOrdineForm"> {{ 'buttons.save' | translate }}  </button>
+	        <button *ngIf="(pageStatus | hasPageStatus: ['edit','view']) && (Privileges?.RIGA_ORDINE_DELETE | hasPermission: privileges)" bzButton status="primary" class="button"
+	            (bzClick)="confirmDeleteRigaOrdine()" > {{ 'buttons.delete' | translate }}  </button>
+			
+		</bz-card-content>	
+    </bz-card>
+
+</form>
+
+
+
