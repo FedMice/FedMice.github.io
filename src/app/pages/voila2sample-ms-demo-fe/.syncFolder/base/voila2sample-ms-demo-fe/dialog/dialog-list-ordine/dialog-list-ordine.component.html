@@ -1,0 +1,45 @@
+
+<bz-card [bzSpinner]="spinner" [size]="cardSize" global>
+
+   <!-- {{ 'header.list' | translate }} ordine -->
+    <bz-card-header>
+         ordine {{ 'header.list' | translate }}
+    </bz-card-header>
+
+	<bz-card-content>
+
+	    <bz-table [sources]="ordineList" [pageSize]="pageSize" [nVisiblePages]="3" [totalPages]="totalPages"
+	        (pageObject)="paginateTable($event, null)" paginatedBe>
+	
+	        <!-- idOrdine -->
+	        <th bzHeaderColumn bzSortColumn="idOrdine"> idOrdine </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.idOrdine}} 
+	        </td>
+	        <!-- anno -->
+	        <th bzHeaderColumn bzSortColumn="anno"> anno </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.anno}} 
+	        </td>
+	        <!-- dataOrdine -->
+	        <th bzHeaderColumn bzSortColumn="dataOrdine"> dataOrdine </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.dataOrdine}} 
+	        </td>
+	        <!-- urgente -->
+	        <th bzHeaderColumn bzSortColumn="urgente"> urgente </th>
+	        <td *bzColumnDef="let element" class="fk-pointer"  (click)="selectElement(element)"> 
+	           {{element.urgente}} 
+	        </td>
+	        <ng-container bzTableNoValue> {{ 'label.noElements' | translate }} Ordine </ng-container>
+	    </bz-table>
+
+	</bz-card-content>
+
+</bz-card>
+
+
+
+
+
+

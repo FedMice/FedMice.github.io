@@ -1,0 +1,39 @@
+
+	<bz-card class="card" isCollapsable>
+    <!-- card header -->
+    <bz-card-header>
+        {{ 'header.search' | translate }}
+    </bz-card-header>
+
+	<bz-card-content>
+
+	    <form [formGroup]="searchTipoOrdineForm">
+		
+	
+	        <!-- Id Tipo Ordine -->
+	        <div class="fk-row inputs">
+	            <div class="fk-col-8">
+					<bz-input label="Id Tipo Ordine da" placeholder="da" formControlName="idTipoOrdineFrom" (keyup.enter)="search()"></bz-input>
+	            </div>
+	            <div class="fk-col-8">
+	                <bz-input label="Id Tipo Ordine a" placeholder="a" formControlName="idTipoOrdineTo" (keyup.enter)="search()"></bz-input>
+	            </div>
+	        </div>
+	
+	
+	        <!-- Nome Tipo Ordine -->
+	        <div class="fk-row inputs">
+	            <div class="fk-col-8">
+					<bz-input label="Nome Tipo Ordine" formControlName="nomeTipoOrdine" (keyup.enter)="search()"></bz-input>
+	            </div>
+	            <div class="fk-col-8">
+	            </div>
+	        </div>
+	
+	
+		 
+	    </form>
+	</bz-card-content>
+</bz-card>
+
+

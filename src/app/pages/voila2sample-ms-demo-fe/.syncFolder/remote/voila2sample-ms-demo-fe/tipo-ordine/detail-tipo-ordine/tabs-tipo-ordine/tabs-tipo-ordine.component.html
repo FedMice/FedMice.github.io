@@ -1,0 +1,12 @@
+
+<bz-tabset>
+	<!--  Tab ordine -->
+    <bz-tab tabTitle="ORDINE " *ngIf="(Privileges?.TIPOORDINE_FIND_BY_THE_ORDINE_OBJECT_KEY | hasPermission: privileges) && (!(pageStatus | hasPageStatus: 'new') &&  true ">
+       <app-tab-ordine [formGroup]="formGroup"  [entity]="entity" [pageStatus]="pageStatus"  [readonly]="true"  ></app-tab-ordine>
+    </bz-tab>
+
+</bz-tabset>
+
+
+
+

@@ -1,0 +1,113 @@
+
+	<bz-card class="card" isCollapsable>
+    <!-- card header -->
+    <bz-card-header>
+        {{ 'header.search' | translate }}
+    </bz-card-header>
+
+	<bz-card-content>
+
+	    <form [formGroup]="searchProdottoForm">
+		
+	
+	        <!-- Id Prodotto -->
+	        <div class="fk-row inputs">
+	            <div class="fk-col-8">
+					<bz-input label="Id Prodotto da" placeholder="da" formControlName="idProdottoFrom" (keyup.enter)="search()"></bz-input>
+	            </div>
+	            <div class="fk-col-8">
+	                <bz-input label="Id Prodotto a" placeholder="a" formControlName="idProdottoTo" (keyup.enter)="search()"></bz-input>
+	            </div>
+	        </div>
+	
+	
+	        <!-- Descrizione Prodotto -->
+	        <div class="fk-row inputs">
+	            <div class="fk-col-8">
+					<bz-input label="Descrizione Prodotto" formControlName="descrizioneProdotto" (keyup.enter)="search()"></bz-input>
+	            </div>
+	            <div class="fk-col-8">
+	            </div>
+	        </div>
+	
+	
+	        <!-- Prezzo Unitario -->
+	        <div class="fk-row inputs">
+	            <div class="fk-col-8">
+					<bz-input label="Prezzo Unitario da" placeholder="da" formControlName="prezzoUnitarioFrom" (keyup.enter)="search()"></bz-input>
+	            </div>
+	            <div class="fk-col-8">
+	                <bz-input label="Prezzo Unitario a" placeholder="a" formControlName="prezzoUnitarioTo" (keyup.enter)="search()"></bz-input>
+	            </div>
+	        </div>
+	
+	
+	        <!-- Data Scadenza -->
+	        <div class="fk-row inputs">
+	            <div class="fk-col-8">
+					 <bz-date-picker label="Data Scadenza da" placeholder="da" controlName="dataScadenzaFrom"  [isPlaceholder]="false" timePicker (keyup.enter)="search()"></bz-date-picker>
+	            </div>
+	            <div class="fk-col-8">
+					 <bz-date-picker label="Data Scadenza a" placeholder="a" controlName="dataScadenzaTo" [isPlaceholder]="false" timePicker (keyup.enter)="search()" ></bz-date-picker>
+	            </div>
+	        </div>
+	
+	
+	        <!-- Limited Edition -->
+	        <div class="fk-row inputs">
+	            <div class="fk-col-8">
+					 <bz-switch formControlName="limitedEdition" (keyup.enter)="search()" >Limited Edition</bz-switch>
+	            </div>
+	            <div class="fk-col-8">
+	            </div>
+	        </div>
+	
+	
+	        <!-- Created By -->
+	        <div class="fk-row inputs">
+	            <div class="fk-col-8">
+					<bz-input label="Created By" formControlName="createdBy" (keyup.enter)="search()"></bz-input>
+	            </div>
+	            <div class="fk-col-8">
+	            </div>
+	        </div>
+	
+	
+	        <!-- Last Modified By -->
+	        <div class="fk-row inputs">
+	            <div class="fk-col-8">
+					<bz-input label="Last Modified By" formControlName="lastModifiedBy" (keyup.enter)="search()"></bz-input>
+	            </div>
+	            <div class="fk-col-8">
+	            </div>
+	        </div>
+	
+	
+	        <!-- Created Date -->
+	        <div class="fk-row inputs">
+	            <div class="fk-col-8">
+					 <bz-date-picker label="Created Date da" placeholder="da" controlName="createdDateFrom"  [isPlaceholder]="false" timePicker (keyup.enter)="search()"></bz-date-picker>
+	            </div>
+	            <div class="fk-col-8">
+					 <bz-date-picker label="Created Date a" placeholder="a" controlName="createdDateTo" [isPlaceholder]="false" timePicker (keyup.enter)="search()" ></bz-date-picker>
+	            </div>
+	        </div>
+	
+	
+	        <!-- Last Modified Date -->
+	        <div class="fk-row inputs">
+	            <div class="fk-col-8">
+					 <bz-date-picker label="Last Modified Date da" placeholder="da" controlName="lastModifiedDateFrom"  [isPlaceholder]="false" timePicker (keyup.enter)="search()"></bz-date-picker>
+	            </div>
+	            <div class="fk-col-8">
+					 <bz-date-picker label="Last Modified Date a" placeholder="a" controlName="lastModifiedDateTo" [isPlaceholder]="false" timePicker (keyup.enter)="search()" ></bz-date-picker>
+	            </div>
+	        </div>
+	
+	
+		 
+	    </form>
+	</bz-card-content>
+</bz-card>
+
+
