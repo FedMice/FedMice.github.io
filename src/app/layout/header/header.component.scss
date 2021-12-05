@@ -1,23 +1,15 @@
+.title {
+    font-size: x-large;
+}
 
-  .dashboard-title {
-     padding: 0 1.25rem;
-     font-size: 1.75rem;
-     white-space: nowrap;
-     text-decoration: none;
-   }
+.subtitle {
+    color: grey;
+    margin-left: 5px;
+}
 
-   .context-row {
-      width:120px
-   }
-
-   .context-icon {
-      margin-right: 5px;
-   }
-
-   .language-drop-size {
-      width: 100px;
-   }
-
-
-
-   
+.toggle-icon {
+    margin-right:15px;
+    margin-top:5px;
+    cursor:pointer;
+    font-size:25px
+}

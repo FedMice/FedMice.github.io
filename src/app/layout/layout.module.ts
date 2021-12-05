@@ -1,42 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BzIconModule, BzLayoutModule, BzMenuModule } from 'blazing';
 import { LayoutComponent } from './layout.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarLeftComponent } from './sidebar-left/sidebar-left.component';
-import { BzLayoutModule, BzMenuModule, BzUserModule, BzActionModule, BzContextMenuModule, 
-  BzBadgeModule, BzHttpProgressBarModule, BzButtonModule, BzDropdownModule } from 'blazing';
 import { SidebarRightComponent } from './sidebar-right/sidebar-right.component';
-import { RouterModule } from '@angular/router';
-
 
 const COMPONENTS = [
-  LayoutComponent,
-  HeaderComponent,
-  FooterComponent,
-  SidebarLeftComponent,
-  SidebarRightComponent
+  LayoutComponent, HeaderComponent, FooterComponent, SidebarLeftComponent, SidebarRightComponent
 ]
 
 @NgModule({
-  declarations: [
-    ...COMPONENTS
-  ],
+  declarations: [...COMPONENTS],
   imports: [
     CommonModule,
     BzLayoutModule,
     BzMenuModule,
-    BzUserModule,
-    BzActionModule,
-    BzContextMenuModule,
-    BzBadgeModule,
-    BzButtonModule,
-    RouterModule,
-    BzDropdownModule,
-    BzHttpProgressBarModule
+    BzIconModule
   ],
-  exports: [
-    ...COMPONENTS
-  ]
+  exports:[LayoutComponent]
 })
 export class LayoutModule { }

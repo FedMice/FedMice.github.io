@@ -7,14 +7,14 @@ const routes: Routes = [
         loadChildren: () =>
           import("./pages/pages.module").then(
             (m) => m.PagesModule
-          ),
+          )
   },
   { path: '', redirectTo: 'pages/home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages/home', pathMatch: 'full' }
+  { path: '**', redirectTo: 'pages/not-found', pathMatch: 'full' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{scrollPositionRestoration: 'top'})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
